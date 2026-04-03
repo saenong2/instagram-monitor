@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정부기관 인스타그램 모니터링</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>정부기관 인스타그램 모니터링</h1>
+      <p>장관급 / 차관급 인스타그램 운영 현황 대시보드</p>
+    </header>
 
+    <section class="summary-cards">
+      <div class="card summary-card">
+        <h3>총 팔로워</h3>
+        <p id="totalFollowers">-</p>
+      </div>
+      <div class="card summary-card">
+        <h3>장관급 1위</h3>
+        <p id="topMinister">-</p>
+      </div>
+      <div class="card summary-card">
+        <h3>차관급 1위</h3>
+        <p id="topViceMinister">-</p>
+      </div>
+      <div class="card summary-card">
+        <h3>평균 팔로워</h3>
+        <p id="avgFollowers">-</p>
+      </div>
+    </section>
+
+    <section class="rank-section">
+      <div class="rank-box card">
+        <h2>장관급 순위</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>기관</th>
+              <th>팔로워</th>
+            </tr>
+          </thead>
+          <tbody id="ministerTable"></tbody>
+        </table>
+      </div>
+
+      <div class="rank-box card">
+        <h2>차관급 순위</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>기관</th>
+              <th>팔로워</th>
+            </tr>
+          </thead>
+          <tbody id="viceMinisterTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-header">
+        <h2>기관별 최신 콘텐츠</h2>
+      </div>
+      <div id="postGrid" class="post-grid"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

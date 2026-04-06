@@ -37,7 +37,7 @@ body {
   background: white;
   border-radius: 18px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .summary-card h3 {
@@ -69,7 +69,8 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 12px 10px;
   border-bottom: 1px solid #eee;
   text-align: left;
@@ -95,7 +96,7 @@ th {
   background: white;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .post-thumb {
@@ -124,6 +125,7 @@ th {
   font-size: 14px;
   color: #333;
   margin-bottom: 14px;
+  line-height: 1.5;
 }
 
 .post-stats {
@@ -140,6 +142,20 @@ th {
   color: white;
   text-decoration: none;
   font-size: 14px;
+}
+
+.post-link:hover {
+  background: #333;
+}
+
+.placeholder-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e7eb;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {

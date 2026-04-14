@@ -11,5 +11,44 @@
     "last_upload": "",
     "profile_picture_url": "",
     "source_mode": "html"
+  },
+  {
+    "agency": "환경부",
+    "display_name": "환경부",
+    "instagram": "ministry_of_environment",
+    "url": "https://www.instagram.com/ministry_of_environment",
+    "level": "장관급",
+    "followers": 0,
+    "post_count": 0,
+    "weekly_posts": null,
+    "last_upload": "",
+    "profile_picture_url": "",
+    "source_mode": "html"
+  },
+  {
+    "agency": "국가유산청",
+    "display_name": "국가유산청",
+    "instagram": "k.heritage.agency",
+    "url": "https://www.instagram.com/k.heritage.agency",
+    "level": "차관급",
+    "followers": 0,
+    "post_count": 0,
+    "weekly_posts": null,
+    "last_upload": "",
+    "profile_picture_url": "",
+    "source_mode": "html"
+  },
+  {
+    "agency": "산림청",
+    "display_name": "산림청",
+    "instagram": "forest_korea",
+    "url": "https://www.instagram.com/forest_korea",
+    "level": "차관급",
+    "followers": 0,
+    "post_count": 0,
+    "weekly_posts": null,
+    "last_upload": "",
+    "profile_picture_url": "",
+    "source_mode": "html"
   }
 ]

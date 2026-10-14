@@ -1,0 +1,35 @@
+
+name: Instagram API Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Collect Instagram data
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+        run: python collect_instagram.py
+
+      - name: Save test result
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-test-data
+          path: data/test_accounts.json
+          if-no-files-found: error

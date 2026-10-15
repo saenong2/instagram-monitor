@@ -60,7 +60,7 @@
       "name": "국방부",
       "group": "장관급",
       "instagram_username": "rokmnd_official",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "기후에너지환경부",
@@ -78,13 +78,13 @@
       "name": "법무부",
       "group": "장관급",
       "instagram_username": "ministry_of_justice_korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "통일부",
       "group": "장관급",
       "instagram_username": "ministry_of_unification",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "행정안전부",
@@ -96,13 +96,13 @@
       "name": "외교부",
       "group": "장관급",
       "instagram_username": "mofa_kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "국가보훈부",
       "group": "장관급",
       "instagram_username": "bohun_story",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "중소벤처기업부",

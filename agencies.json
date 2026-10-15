@@ -35,14 +35,14 @@
     {
       "name": "국토교통부",
       "group": "장관급",
-      "instagram_username": null,
-      "instagram_verified": false
+      "instagram_username": "molit.go.kr",
+      "instagram_verified": true
     },
     {
       "name": "문화체육관광부",
       "group": "장관급",
-      "instagram_username": null,
-      "instagram_verified": false
+      "instagram_username": "mcstkorea",
+      "instagram_verified": true
     },
     {
       "name": "고용노동부",
@@ -53,8 +53,8 @@
     {
       "name": "보건복지부",
       "group": "장관급",
-      "instagram_username": null,
-      "instagram_verified": false
+      "instagram_username": "mohw_kr",
+      "instagram_verified": true
     },
     {
       "name": "국방부",

@@ -12,7 +12,7 @@
       "name": "경찰청",
       "group": "차관급",
       "instagram_username": "police_kor_official",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "대한민국정부",
@@ -66,7 +66,7 @@
       "name": "국세청",
       "group": "차관급",
       "instagram_username": "nts.korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "법무부",
@@ -114,7 +114,7 @@
       "name": "질병관리청",
       "group": "차관급",
       "instagram_username": "koreadca",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "방위사업청",
@@ -162,7 +162,7 @@
       "name": "소방청",
       "group": "차관급",
       "instagram_username": "korea_fire_119",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "과학기술정보통신부",
@@ -192,7 +192,7 @@
       "name": "관세청",
       "group": "차관급",
       "instagram_username": "korea_customs",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "재정경제부",

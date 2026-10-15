@@ -1,24 +1,69 @@
 {
-  "collected_at": "2026-10-15T00:10:23.286724+00:00",
-  "updated_at": "2026-10-15 09:10 KST",
+  "collected_at": "2026-10-15T07:05:23.874609+00:00",
+  "updated_at": "2026-10-15 16:05 KST",
   "coverage_note": "시험 운영: 2개 기관 수집. 하루 1회 갱신, 최근 게시물 중심으로 누적 저장합니다.",
   "agencies": [
     {
       "name": "농림축산식품부",
       "username": "nong_ru_wahhhhh",
       "level": "장관급",
-      "followers": 111491,
-      "media_count": 1098
+      "followers": 111502,
+      "media_count": 1099
     },
     {
       "name": "행정안전부",
       "username": "withyou3542",
       "level": "장관급",
-      "followers": 132409,
-      "media_count": 4771
+      "followers": 132414,
+      "media_count": 4772
     }
   ],
   "posts": [
+    {
+      "id": "18633743971029791",
+      "agency": "행정안전부",
+      "level": "장관급",
+      "date": "2026-10-15",
+      "timestamp": "2026-10-15T05:38:27+0000",
+      "type": "CAROUSEL_ALBUM",
+      "caption": "🏆 제1회 대한민국 공익활동 임팩트 어워드 개최\n\n💚 실제 어려운 이웃의 삶에 변화를 만든 우수 공익활동을\n국민에게 알리고, 널리 퍼질 수 있도록 올해 처음 시상식 마련\n\n🎖️ 사회문제 해결에 기여한 우수 공익활동 31건 선정·포상\n- 총 68건 공익활동 사례 접수\n- 장관상 20건, 민간 기관장상 11건 등 수상\n\n🤝 우수사례·경험 공유 및 민관 협력방안 모색\n- 「공익활동 임팩트 컨퍼런스」 개최\n- 5개 분야 25개 사례 발표 진행\n- 'AI와 공익활동' 특강\n\n🌱 다양한 공익활동 모델 발굴 및 나눔 문화 확산 추진 계획\n\n앞으로도 국민 삶에 도움이 되는 공익활동을 발굴하고\n널리 확산되도록 관심과 지원을 아끼지 않겠습니다.\n\n#행정안전부 #행안부 #공익활동\n#임팩트어워드 #컨퍼런스 #사회문제\n#우수사례 #나눔문화 #어워드",
+      "likes": 6,
+      "comments": 0,
+      "views": null,
+      "view_delta": null,
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/847998867_18339780937275893_5719202231411439683_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=3jy9K3ETBPsQ7kNvwGY7sEN&_nc_oc=AdqjcQr5A0rRyCrNbHD21rRNxISKVd8TiHTGAcLbDB1nH7yfhSiw_8ZVYu_wJ-sf1tc&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQMYCfSWIqELOWrWtKJfRcKFBsO1IT7QvKDJt7zDkKRd9w&oe=6AD64D3F",
+      "permalink": "https://www.instagram.com/p/DegOcmuoHb0/"
+    },
+    {
+      "id": "18095601905126858",
+      "agency": "행정안전부",
+      "level": "장관급",
+      "date": "2026-10-15",
+      "timestamp": "2026-10-15T02:05:55+0000",
+      "type": "VIDEO",
+      "caption": "💬 모두의 토론회 ㅣ 에스컬레이터 안전이용편\n\n🔎지난 8.29.(토) 연세대학교에서 개최된 \n<에스컬레이터 안전이용편> 모두의 토론회\n\n서로의 이야기에 귀 기울이며 함께 나눈 생각들이 모여 더 큰 의미가 된 시간, \n스케치 영상으로 만나보세요. ✨\n\n🔔 문의 행정안전부 국민참여정책과 044-205-2422 \n\n#행정안전부 #행안부 #모두의_토론회 #에스컬레이터",
+      "likes": 11,
+      "comments": 0,
+      "views": 1180,
+      "view_delta": null,
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/847859699_18339761680275893_1922526764135331806_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=puhUg6WP5uAQ7kNvwGQXQnn&_nc_oc=Ado-AlxSSQgKJ562X0SDq9rN_H_SOYaQ6pYH1fUnZ0Tbn7abgUStkU0DlIdE-N9Pcpg&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&_nc_tpa=Q5bMBQJ_zN4x-k3ZCCA2GILPvlxtKmVAvxBQ0TJ-kCnMDjtPP2d_QVOhd6sBry5yVJZFas8EIJ_E1U19kA&oh=00_AQO5HmG74WkV_UktLSwbPLsf7walRTWP_goNYyWaQ72crg&oe=6AD66558",
+      "permalink": "https://www.instagram.com/reel/Def16lQAjeB/"
+    },
+    {
+      "id": "17878808763651656",
+      "agency": "농림축산식품부",
+      "level": "장관급",
+      "date": "2026-10-15",
+      "timestamp": "2026-10-15T01:58:49+0000",
+      "type": "VIDEO",
+      "caption": "'더 쌀' 1부, 쌀 미美식이 되다🍚\n\n우리 식탁에서 가장 익숙한 식재료, 쌀!\n최고의 밥맛을 위해 끊임없이 연구하고 노력하는 사람들이 있습니다.\n\n우리 쌀의 맛과 가치를 높이기 위한 그들의 이야기를 다큐멘터리에 담았습니다.\n\n#농림축산식품부 #농식품부 #더쌀미식이되다 #쌀 #히밥",
+      "likes": 17,
+      "comments": 2,
+      "views": 809,
+      "view_delta": null,
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/848881532_18167043637488672_7087462176266297651_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=I2WEBt4pfFgQ7kNvwE18JCZ&_nc_oc=AdqjfQWNvgq0AnRcUgnOPCYq7YGmy1IXlEsk_J1HnNOI1tvkRtXX23jvIyA8b_4oG_w&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&_nc_tpa=Q5bMBQJLQhF--NcSItdGIM4ftsLTndAagj5sjK0cBjSnBH2jrJrmHcBfexyLjrlZfIGJTc31jxlnPforpQ&oh=00_AQN9IzGRO1HHi0KSJW8dQy3VgSUQzajzXDYYhrMxrYrEIw&oe=6AD66355",
+      "permalink": "https://www.instagram.com/reel/Def1Pt9swPx/"
+    },
     {
       "id": "18116581642790285",
       "agency": "행정안전부",
@@ -27,11 +72,11 @@
       "timestamp": "2026-10-14T08:58:16+0000",
       "type": "VIDEO",
       "caption": "올가을, 특별한 데이트 장소를 찾고 있다면?🏻\n정부세종청사 옥상정원에서 자연과 함께하는 여유로운 시간을 보내보세요!\n\n2026년 옥상정원 하반기 관람운영일: 2026.08.31.~2026.11.29.\n\n🍂운영일정: 평일·주말 : 1일 3회(10:00, 13:30, 15:30) \n🍂관람신청\n- 네이버 사전예약(50명/회) 및 현장접수 병행\n- 본인 확인을 위한 신분증 지참 필수 \n🍂관람료: 무료 \n주소: 세종특별자치시 도움6로 11(정부세종청사 6동 종합안내동)\n🍂문의사항 : 044-200-1580\n\n올 하반기에도 옥상정원 관람은 계속됩니다!\n\n#정부세종청사옥상정원 #세종청사옥상정원 #세종특별자치시\n#세종시 #청년인턴",
-      "likes": 64,
+      "likes": 73,
       "comments": 9,
-      "views": 9761,
+      "views": 11179,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/849146688_18339657061275893_8638581739554136165_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=R2YVN6YqvkYQ7kNvwGX-Ipt&_nc_oc=AdoYeseTUCOoEqiStyMUWWyR-p1wxoDQw6hZry0DnwAjqCKMXdXnIB5JfIYq2YtWrbQ&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&_nc_tpa=Q5bMBQJiM1TEdhjuFjZVYGfV5idJ5GKA4pTwsYEIssP8CrSq67nXhAxVNME6nO8mrd1nvQ3CCNHJMFm4xQ&oh=00_AQPuUzghPFcMgCAxHtgmIlqElfKYbStAVnNwhlOett1j5g&oe=6AD5F3EE",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/849146688_18339657061275893_8638581739554136165_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=R2YVN6YqvkYQ7kNvwGWWpqd&_nc_oc=Adrvz-ibIovdjronnw30K7rc_RQiKatXtK_e1Dojtf7h5qDb-wBoNrJLE3SNp-iaZvc&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&_nc_tpa=Q5bMBQLZs0NotVbaR-hL301GobpJ--NjijYlGujrhmZfwR7mJAe_4dXFNPtMFFEoAsbghFdbiuX9jn_RIg&oh=00_AQNg2TFMBbS7k6wdPxnpGB7nOAXKdelS31fQUrzi_hjQWQ&oe=6AD6646E",
       "permalink": "https://www.instagram.com/reel/DeeAckniXB1/"
     },
     {
@@ -42,11 +87,11 @@
       "timestamp": "2026-10-14T04:36:16+0000",
       "type": "CAROUSEL_ALBUM",
       "caption": "🎓 대학과 함께 키우는\n미래 재난안전을 이끌 인재\n\n🤝 「재난관리 분야 전문인력 양성사업」 업무협약 체결\n\n🏫 4개 대학 : 강원대, 동의대, 숭실대, 호서대\n- 1년 6개월간 학위과정 운영 지원\n\n👨‍🎓 국가와 지역사회의 재난안전 이끌\n전문인력 143명* 양성\n- 학사 과정 75명('26년 신규 도입), 석사 과정 38명, 박사 과정 30명\n\n🌱 재난 분야 연구개발, 기업 재해경감 활동 등\n다양한 분야에서 활동\n\n대학과 긴밀히 협력해 현장 대응 역량을 갖춘\n재난관리 전문가로 성장할 수 있도록 지원하겠습니다.\n\n#행정안전부 #행안부 #재난안전\n#전문인력 #양성사업 #업무협약\n#재난관리 #대학교 #대응역량",
-      "likes": 21,
+      "likes": 23,
       "comments": 0,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/847116027_18339635392275893_4995189663958814044_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=zFiXq6_vE68Q7kNvwHGUvtm&_nc_oc=AdogM3LRa4w7gKqqHrKYaR4qAaYsnAnX2OaVmx1Df0pN_Ziw1RFrBuxmubKlz2SM3YQ&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQNCexEiILV1NpLaru7bJwdG0x6cakCm7U2eciHn3g0i3A&oe=6AD5FA7F",
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/847116027_18339635392275893_4995189663958814044_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=zFiXq6_vE68Q7kNvwGljpEy&_nc_oc=AdrCVbOP0eXClTuPV8O-ji-vB8Nzm7eFygxFF3X8nZIElx2T74ww_eUz6WvVWaWL2Ck&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQMvkfQS5csN4BBzPxAKHDxHNVJL7IVXc5sUkSbdY7MXUA&oe=6AD632BF",
       "permalink": "https://www.instagram.com/p/DediiQRk8-v/"
     },
     {
@@ -58,10 +103,10 @@
       "type": "VIDEO",
       "caption": "모두의 일상을 풍요롭게, 우리는 지금 공익직불제 구독 중!\n\n🌾 우리는 지금, 공익직불제 구독 중!\n\n맑은 공기, 신선한 먹거리, 예쁜 풍경, 밤하늘의 별까지 ✨\n우리가 누리는 일상은 농업·농촌이 지켜가고 있습니다.\n환경·생태 보전부터 식량안보, 깨끗한 농촌까지, 공익직불제가 함께합니다.💚\n\n#공익직불제 #농림축산식품부 #친환경농업직불제 #경관보전직불제 #전략작물직불제",
       "likes": 31,
-      "comments": 1,
-      "views": 1009251,
+      "comments": 2,
+      "views": 1275873,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846824836_18166949515488672_8409712781900847583_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=E37-BE9ecv8Q7kNvwHVfbMv&_nc_oc=AdrlMpL_uweIcX2fjJ0O7KsR-x2kh_Tq3efogq6YpJaQf2FNTyTV7YGHVkKu0RU93D8&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&_nc_tpa=Q5bMBQJ0IKrPKQcFJBH1ZyTm_CP4eBjVmVSKotRtsbQNTwh1GLC4C-9zAsywrvfCLU6lQXDGsO5qJSiL7A&oh=00_AQMAgZXnhdyT2nCB4-1Jf05Bfa6Jhvr3Z9YC1YgT0YGSJQ&oe=6AD5D5AB",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846824836_18166949515488672_8409712781900847583_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=1&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=E37-BE9ecv8Q7kNvwGENSAV&_nc_oc=AdpmtWzdfC6nQdnk7WkgKrDI_88oPoNxbkGZCIuhEC32e92NphbWbQBnssdS4CSpNps&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&_nc_tpa=Q5bMBQJCW3HrE79dA0Ti0LpoejKQzW1t4cYmWC99k-dc_3jKjdaQRgtV1iseiCyHFWPvZgYAPKkmmfsIdQ&oh=00_AQND-s1jham22IM1iOCEGA61EybJ45I38SeMXc95OnaeYQ&oe=6AD6462B",
       "permalink": "https://www.instagram.com/reel/DedPcj7hJrO/"
     },
     {
@@ -72,11 +117,11 @@
       "timestamp": "2026-10-13T08:45:07+0000",
       "type": "CAROUSEL_ALBUM",
       "caption": "브라질 계란 수입에 대한 정확한 사실을 알려드립니다.\n#농림축산식품부 #농식품부 #계란수입 #팩트체크",
-      "likes": 73,
+      "likes": 74,
       "comments": 12,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846705065_18166871743488672_737702317621767784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BsQws5p3V-EQ7kNvwHp9VDZ&_nc_oc=AdrQYclrY5RaqEVJf2U44Yx8hBIAsFZzYOhUI5kweWTpqjCaM8g8ZjHSw8fYDxZ8_Dc&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQOrNUJY0oPo3mfZKOPzWz2hU3ilGUjP5zTPafxX6Z55bA&oe=6AD5D236",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846705065_18166871743488672_737702317621767784_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=BsQws5p3V-EQ7kNvwH-U-Jr&_nc_oc=AdpVMcIQfgo_md1wcM6b2TTCCY3-fYkVju87BeourzOwgPzG_NlQQlpF4G7gmqjiHW4&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQN2gPUtQZ5UQwxWNYFj5_QZcWUEUc1mTQ2ze19q_qGDnQ&oe=6AD642B6",
       "permalink": "https://www.instagram.com/p/DebaODEoAeO/"
     },
     {
@@ -87,11 +132,11 @@
       "timestamp": "2026-10-13T06:54:28+0000",
       "type": "CAROUSEL_ALBUM",
       "caption": "농지 조사 후속조치 발표에 대한 정확한 사실을 알려드립니다.\n#농림축산식품부 #농식품부 #농지조사 #팩트체크",
-      "likes": 40,
+      "likes": 41,
       "comments": 2,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846375226_18166864471488672_2895298300488061728_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=diwC5owa-ZkQ7kNvwFq9h76&_nc_oc=AdqWvmUJ4p5ejzCfSiLEd6nTjPkZBBUBfx014t6HmsqchIY1wiXHsqZYURxKuXf3eGI&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQMOgQckYpHJicUxJ5dNF1A0N90WWg5bPLAt0FIj5Na28A&oe=6AD5F20D",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846375226_18166864471488672_2895298300488061728_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=diwC5owa-ZkQ7kNvwF3Ibk1&_nc_oc=AdrNjzuRnfw7H5X5sVuHnN9rL2panXCmZHlsXknQtQYHv4nxymbfTa8blPRu4FFeH3s&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQMEAVdPrmQqSzJm-zXlP5N2z2lKhJqeXDiEScUHxb-q0w&oe=6AD6628D",
       "permalink": "https://www.instagram.com/p/DebNjkEIHzN/"
     },
     {
@@ -106,7 +151,7 @@
       "comments": 7,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846927502_18339499435275893_3777820341244953855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_usxeq6cfkcQ7kNvwF6yGFy&_nc_oc=AdoWh3y_ssX2KtcPq-Z4b3KqUNKZJmvXI6w5gza8v26uL_UpjsMF4CRGtoBDWgsuXYE&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQPdibzM-CVdhSCMeyQktb9v3a5NsoiiksAkk4qy3ZvrCg&oe=6AD606E8",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/846927502_18339499435275893_3777820341244953855_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_usxeq6cfkcQ7kNvwHxQLpD&_nc_oc=AdqpY9w4mVOetfpxybFnOTjQ1VrBUm0JPpCipdAH46TJsjFgc_RZ2ywx2-YjUW0v6iU&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQNgYd5CE9wQiThwc48J7grA4VeTLCtl0pfwyOp5vcQ0iw&oe=6AD63F28",
       "permalink": "https://www.instagram.com/p/DebJqaJk-N9/"
     },
     {
@@ -119,9 +164,9 @@
       "caption": "✨ 주민등록표 등·초본의 '세대주와의 관계' 표기 방식이 새로워집니다!\n불필요한 개인정보와 사생활 노출을 줄이고, 국민 여러분의 편의를 높입니다. \n\n📌 기존 등·초본 발급, 이런 점이 아쉬웠죠 \n☑ 불필요한 가족관계 표기로 인한 사생활 노출 우려\n☑ 재혼 가정 등의 세대원 표기 구분으로 인한 불편 \n\n💡 어떻게 변경되나요? \n☑ '일반' 표기 선택 시: \n세대주의 배우자를 제외한 민법상 가족(자녀, 부모 등)은 '세대원'으로 통일, \n그 외는 '동거인'으로 일괄 표기됩니다.\n☑ '상세' 표기 선택 시: \n기존과 동일하게 구체적인 관계(부, 모, 자녀, 배우자의 자녀 등)가 명시된 방식으로 발급 가능합니다. \n\n📱 발급 신청 시 꼭 확인하세요! \n① 발급 기관 사전 확인 필수 : 제출 전 어떤 서식으로 발급받아야 하는지 제출 기관에 꼭 확인해 주세요.\n② 기본 발급형식은 '일반' : 제출 기관의 별도 요구가 없는 경우 '일반' 표기 방식으로 발급받으세요.\n③ '상세' 선택 시 : 세대주와의 관계에서 '상세'를 선택하실 경우 '용도 및 목적' 작성이 필수입니다. \n\n✨ 행정안전부는 앞으로도 국민의 사생활 보호와 \n차별 없는 사회 구현에 앞장서겠습니다. \n\n자세한 내용은 카드뉴스를 통해 확인 부탁드립니다. \n\n#행정안전부 #행안부 #정부24 \n#주민등록표 #주민등록등본 #주민등록초본 \n#제도개선 #사생활보호 #재혼가정 #가족관계",
       "likes": 18,
       "comments": 1,
-      "views": 1725,
+      "views": 1765,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/847745399_18339471730275893_55577739905065589_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gDxt5dqldmIQ7kNvwEIogQG&_nc_oc=Ado7O-u5yfI67uvHwj35pWDfpV6RO5d0iI-lMdN7rX9YFgTKlRnAm18aNHo5X1H842E&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&_nc_tpa=Q5bMBQJjt5HLHgUHq68liTkHuPDNZk_pB-rD4Hct6NJ5rOhqHncrPmuvELvzMGZr9ypDUpPnjNEWAcl0gg&oh=00_AQN1TSIvjKtAmnRLwSc62Hs8cu1GM5DqdgYJt9jCwa_XaQ&oe=6AD5ECA2",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/847745399_18339471730275893_55577739905065589_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=gDxt5dqldmIQ7kNvwFZTW75&_nc_oc=Adpb3Hvs5Cu8BcYm95tFcUTkxdrn5HPt999wvASWbj2iUzRi4XZYuHg8GcXDUX_Siz4&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&_nc_tpa=Q5bMBQKEHUm4qS22o0HFzQXk8R_e9HxQdwE0JlX_ZheEChvezIJHjiNpDYJaOb9fNXmG143pPO1wtgqPYw&oh=00_AQNOfJ-UjA5DQw-4QJnJgVBNlwE4Q6l-EioysxLniHe7jg&oe=6AD65D22",
       "permalink": "https://www.instagram.com/reel/DeasTEFiD6V/"
     },
     {
@@ -133,10 +178,10 @@
       "type": "CAROUSEL_ALBUM",
       "caption": "10·29 이태원참사 4주기, 잊지 않고 기억하겠습니다. \n\n희생자를 추모하고 유가족과 생존피해자의 아픔을 함께 나누는 추모행사가 열립니다.\n* 시민추모대회 10.24.(토) 17:30 / 서울광장\n* 4주기 기억식 10.29.(목) 10:29 / 광화문 북광장\n기억식 참여는 10월 19일까지 QR을 통하여 사전 신청 가능합니다.\n국민 여러분의 많은 관심과 참여 부탁드립니다.\n\n#행정안전부 #행안부 #이태원참사4주기\n#기억과추모 #시민추모대회 #4주기기억식",
       "likes": 78,
-      "comments": 13,
+      "comments": 14,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/847952966_18339469600275893_1440193063440483436_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OhT-uKNT6LQQ7kNvwH7Pytr&_nc_oc=Adr1DQhQ_ZRE9vxb4J7khfNk9nuxPjb4qsKEnLtAKzqVVYHEBCOkfdCQXmnXp-Um4Vs&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQM4sMi2XnpHwzvTx-WRwl4J4THcHw25bEiNX4JhBSpyYA&oe=6AD5D9A6",
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/847952966_18339469600275893_1440193063440483436_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OhT-uKNT6LQQ7kNvwFfsbik&_nc_oc=AdoOP9_iUlCSQt-tmM4HYE2wOnpZIQTsdqKGGhY0dkWS7jLna4xQVXeldaMpqpXBwEI&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQPQbUTH7ySWj7nEbmNyVWNT5ZxIWIqatO_WFUdIlLplIQ&oe=6AD64A26",
       "permalink": "https://www.instagram.com/p/Deap5mak4Wm/"
     },
     {
@@ -147,11 +192,11 @@
       "timestamp": "2026-10-12T05:18:40+0000",
       "type": "CAROUSEL_ALBUM",
       "caption": "📢 2026 하반기 안전한국훈련 소문내기 이벤트 \n\n예고 없이 찾아오는 재난에 누구도 예외는 없습니다 ⛈️\n재난 앞에 생명과 재산을 지키는 힘은 반복된 훈련입니다.\n중앙부처, 지방정부, 공공기관이 참여하는 \n범정부 합동훈련 하반기 재난대응 안전한국훈련을 널리 알려주세요\n추첨을 통해 소정의 경품을 드립니다 🎁\n \n📌 참여방법\n① 안전한국훈련 공식 유튜브 구독하기\n② 하반기 안전한국훈련 홍보영상 감상하고 응원댓글 달기 (이미지 상단 QR코드 참고)\n③ #2026안전한국훈련 해시태그와 함께 개인 SNS에 홍보영상을 공유하기\n④ 구글폼에 구독 인증샷, 공유 게시물 URL 및 캡처본 제출하기 (★필수)\n👉 https://forms.gle/NGkxCaiFhPBdWdQN7\n \n📅 참여기간\n2026. 10. 12(월) ~ 10. 31(토)\n \n📢당첨자 발표\n2026. 11. 6.(금) 예정 (※ 안전한국훈련 유튜브 채널 게시물에 공지)\n \n🎁 경품\n모바일상품권 10,000원(40명) (※ 이벤트 참여자 중 무작위 추첨)\n\n여러분들의 많은 참여 부탁드립니다.\n\n#행정안전부 #행안부 #안전한국훈련\n#소문내기 #이벤트 #중앙부처\n#지방정부 #공공기관 #재난대응",
-      "likes": 68,
-      "comments": 6,
+      "likes": 69,
+      "comments": 7,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/844474730_18339345667275893_1638383791316278439_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Ygb7VjPyDQYQ7kNvwESkgUl&_nc_oc=AdpQTKyZ2sLQd1q6n-IQHvA248fAGrLhl3Gs93WguM30juiRF6_7QMoshMwgK2pCl54&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQMwvGmFdxO-mQjxucHFncP_Z9fRxMmegAp4paE-19mKgg&oe=6AD6049B",
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/844474730_18339345667275893_1638383791316278439_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=Ygb7VjPyDQYQ7kNvwGaO4gz&_nc_oc=AdrlAKwBXo-5isnE_bwt_uavKNlWtfBMhvtoeyLl3iQqvoZ3fsU5vzkuhnTA3FoODtg&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQMiMJTLhBGpxi9ach15YOqv9-hYuHG5Y11kV3fEe0NDnA&oe=6AD63CDB",
       "permalink": "https://www.instagram.com/p/DeYdzCKkyW5/"
     },
     {
@@ -166,7 +211,7 @@
       "comments": 0,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/847338856_18339341419275893_4671405483556967197_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OVLPfo4VXNQQ7kNvwFofXln&_nc_oc=AdoLWQW9lMaEJ0XR88hY_7usAGDH330dBVLR74Maqd9Zkrj8m3295dFh740xUUWQG6Q&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQNLDpK0O1-3n6SKD7fYS9v19sIl6OArlwjou1wM4Y0O-g&oe=6AD6076F",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/847338856_18339341419275893_4671405483556967197_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OVLPfo4VXNQQ7kNvwGXKVc5&_nc_oc=Adq9fh_o1anoPI1iRvZe961XQQIY6-TwFRTBGCdRXUG4bWqyYDuE4hpTAS9vjk9p-vo&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQP5FP8hy95HIxiZQdOBps4LD49zyJcm4em9kwRsYObi9g&oe=6AD63FAF",
       "permalink": "https://www.instagram.com/p/DeYYbhak4u2/"
     },
     {
@@ -179,9 +224,9 @@
       "caption": "춤신춤왕 강아지\n\n2026년 제2차 동물등록 자진신고\n2026년 9월 1일~10월 31일까지!\n잊지 말고 꼭 등록하세요!🐾\n\n동물등록은 가까운 시·군·구청이나 동물병원 등 동물등록대행자를 통해 신청할 수 있습니다!\n\n*이 영상은 AI로 제작된 영상입니다.\nCreated with ChatGPT, Higgsfield\n\n#농림축산식품부 #동물등록 #동물등록자진신고 #반려견 #반려묘",
       "likes": 109,
       "comments": 8,
-      "views": 5205,
+      "views": 5296,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/840070251_18166354840488672_2846108345536749418_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tpwyaqTGvpsQ7kNvwEl2juh&_nc_oc=AdqGYzK8SJyhgSPfPLPlP2sSLRbe-Ol1syXQYlmhHcia7iWb36xZ-YrjpEhJoZk7M8M&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&_nc_tpa=Q5bMBQK7lLUySbCxPqk2KSykRD2PQoshvdUTpSehbVzrSmtd5nBpaXDzXNMeNyr3ddNICosDydhsppPlVg&oh=00_AQOnCZ7xfIrpLJZQUKtZHJzFUE-_RQL32GDnZWgB56nCBw&oe=6AD5F3DD",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/840070251_18166354840488672_2846108345536749418_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=tpwyaqTGvpsQ7kNvwHgkltN&_nc_oc=AdomqEvKwLtODi2cF3_7mBd0fmHjnquLQmYMQpTD6Q93bQOHC6KUfF7XzQMb9kKDGTA&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&_nc_tpa=Q5bMBQIP21jj8GGgNwa3KAkqrmYxkXvLbmpORG2Z-6_4rII0GMhW_U4bQPu21qlak7rm2SXfXMbBXuoTlg&oh=00_AQNp6p1Pdq6SIxWnAtRqLdD4SDE580Gj_tv62zMUN0lBrw&oe=6AD6645D",
       "permalink": "https://www.instagram.com/reel/DeYHJG7hsIS/"
     },
     {
@@ -192,11 +237,11 @@
       "timestamp": "2026-10-12T01:32:40+0000",
       "type": "CAROUSEL_ALBUM",
       "caption": "🎁 2026 지진안전주간 10월 2주차 EVENT!\n\n우리 동네의 지진,지진해일 대피장소를 찾아\n방문하고 인증샷을 남겨주세요! ✨\n\n📸 방문 인증샷을 구글폼으로 제출하면\n추첨을 통해 선물을 드립니다! 💖\n\n지진이 발생했을 때 어디로 대피해야 할지,\n미리 확인하고 안전을 준비해보세요! 🏃‍♀️🏃‍♂️\n\n⭐이벤트 참여 방법\n①내 주변에 있는 대피장소 방문하고 인증샷 촬영하기\n②지진안전 누리집(www.지진안전.com) 접속하기\n③이벤트 게시글 내 구글폼 접속 후 응답하기\n④참여자 정보와 함께 답변 제출하면 이벤트 참여 완료!\n\n📅 이벤트 기간\n2026. 10. 12.(월)~10. 30.(금)\n\n📢 당첨자 발표\n2026. 11. 04.(수) 📌지진안전 누리집 공지 예정\n\n🔽 구글폼 바로가기\nhttps://forms.gle/7ybAB6P5DbqCYLTR8\n\n🎁 이벤트 경품\n모바일 상품권 5,000원(100명)\n\n✨ 자세한 참여방법은 지진안전 누리집 이벤트 페이지를 참고해 주세요!\n\n#행정안전부 #행안부 #지진안전\n#지진행동요령 #이벤트 #방문이벤트 \n#지진 #지진안전누리집 #인증샷이벤트",
-      "likes": 81,
+      "likes": 82,
       "comments": 4,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/844616762_18339323623275893_8339182878091801309_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_SOxmzIN8TsQ7kNvwFX5yBz&_nc_oc=AdqfP71OdLVzKFw2pX3ir-bp0D4uSEqDZiSB_J5ze7AO6dT4c6IvlI60l_oydocgzvM&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=CuKyRO8NvNoQW2nhtp_xHQ&oh=00_AQOQUEKtu8aR4l9aNsAHuaFjANLJLsshjW7jshw-mpu1Yg&oe=6AD5E6D8",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/844616762_18339323623275893_8339182878091801309_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_SOxmzIN8TsQ7kNvwEaQGlw&_nc_oc=AdpnGD9mBUarYdZz1an9PaIhAvNiRWLcdN5vzDSeGy25QJ6naU9dkSQD_Cy664j4GAM&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=4LY16ZmSJh9xBKhVgEpGnA&oh=00_AQOyQQpJCo1iwvm-sYwSmYBgSkt2AyOz794PkZS2jtJAOQ&oe=6AD65758",
       "permalink": "https://www.instagram.com/p/DeYD70bk8W7/"
     },
     {
@@ -207,11 +252,11 @@
       "timestamp": "2026-10-11T04:51:09+0000",
       "type": "IMAGE",
       "caption": "농지 조사와 관련해 중국산 드론 사용에 대한 정확한 사실을 알려드립니다.\n#농림축산식품부 #농식품부 #농지조사 #팩트체크",
-      "likes": 47,
+      "likes": 48,
       "comments": 7,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/845977354_18166644508488672_4656368132470809440_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=vOLVUpgYjlUQ7kNvwErZh8K&_nc_oc=AdoavOxckNbqxrQBmp10E7CkiutgF7ANBdrqkXp7a8g6z7XWH0nGbMPkdwvrZp0255k&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQNkTcRKNkTsdQZzV-FgtuY786p0kIGhA9bd8e67EVooIw&oe=6AD60640",
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t51.82787-15/845977354_18166644508488672_4656368132470809440_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=vOLVUpgYjlUQ7kNvwG-k9pE&_nc_oc=Adri367deJST734xbdoByyd0bBbgVo_2Uv6aC7uJXmTlItwhxgQjdzb2A-oDOK7jJMM&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQPx1-vXNj26sJgXFZIf42qfcKwlEO2YI_xaYePlzjFerw&oe=6AD63E80",
       "permalink": "https://www.instagram.com/p/DeV1npWhAch/"
     },
     {
@@ -226,7 +271,7 @@
       "comments": 8,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t39.30808-6/839594549_1569423548555684_4459055050705658128_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=GQrOBqwqu6kQ7kNvwHPIyUd&_nc_oc=AdrzuOkqYCliMVoAgTbmMOkHSz1kOK4Zrpvb12hG8cuJO8DK9u3P5tASBz3U313SU8A&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQOyXu6r6ILO30PtlvC_A0PaEXDLkNXP8L-XRXZKPB2uFA&oe=6AD5F0F7",
+      "thumbnail": "https://scontent-sjc3-1.cdninstagram.com/v/t39.30808-6/839594549_1569423548555684_4459055050705658128_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=GQrOBqwqu6kQ7kNvwGcystV&_nc_oc=AdqDDohXKVdYy4RKRv8xXnwjmUhrwXhqbSv18j0-y4H-oqOfjLe_V97DmVvZqiBl9Zg&_nc_zt=23&_nc_ht=scontent-sjc3-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQOr0MGeDBj5DHz-afGipaLn2MD0nSpVgvqz3ZOA_bndAw&oe=6AD66177",
       "permalink": "https://www.instagram.com/p/DeOkxRQD6DK/"
     },
     {
@@ -284,9 +329,9 @@
       "caption": "직장인의 일주일 요약\n\n매일 똑같은 사무실 지겹다고?\n아름다운 농촌 풍경 속에서 일하고,\n퇴근 후에는 여유로운 휴식까지! \n\n✅농촌형 워케이션이 기존 10개소에서 총 13개소로 확대 운영\n✅평일 기준 1인 1일 최대 5만 원(9~11월은 최대 5일)\n✅여행자보험 가입 지원\n\n농촌에서 일과 휴식을 함께 즐겨보세요! 🍃\n\n📌 자세한 정보는 농촌관광 누리집 웰촌(www.welchon.com)에서 확인해 보세요!\n\n*이 영상은 AI로 제작된 영상입니다.\nCreated with ChatGPT, Higgsfield\n\n#농림축산식품부 #워케이션 #농촌워케이션 #촌캉스 #웰촌",
       "likes": 57,
       "comments": 6,
-      "views": 3362,
+      "views": 3390,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/841140086_18166343317488672_8272299465442455566_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=L_9_z4UAB6YQ7kNvwElyogo&_nc_oc=AdoxGMG01JLyp-2MWw4gnkfztzcB0gCPbwOsEeIYq49Y5xuHhtxtDocDvrLT35IPHSk&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&_nc_tpa=Q5bMBQIN_wfBmowA5MkbFEeXQ10Hagla2avv6C6uQbAV8C-Iu72levFB16dh3Ha6RwCJTJVjT4oYRvxG7Q&oh=00_AQPeD8Kls7pj25InaoxM7z7xAN3ZS0xjUKrMyxqViT7vsg&oe=6AD5E573",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/841140086_18166343317488672_8272299465442455566_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=L_9_z4UAB6YQ7kNvwHeFNFD&_nc_oc=Adrs3q_RPL8Jz6WXfYrw-AkKML9WG5Yko9vtJEpJCgXYw4oUi50rZ0WSoeWPJhCuGF4&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&_nc_tpa=Q5bMBQJlMM0HCeMdg8unbosiu6-GPrDQ7TEpUvBrZ_bx_dIuHGCz5MKe1tcD75BrLZDCoJZuSZIs3dsfwQ&oh=00_AQNkt4CyVeEBolFhDtPJqCaVOsrK9h3KtUvLYp9PZIYU0A&oe=6AD655F3",
       "permalink": "https://www.instagram.com/reel/DeOEWxMJcbL/"
     },
     {
@@ -316,7 +361,7 @@
       "comments": 8,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t39.30808-6/840206497_1568424655322240_757394542080824193_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ryhF6HWtLN8Q7kNvwGexo5T&_nc_oc=AdoJh4oKSxxOALVJnO8BcOw9X7xRppUsJhBxhxNwdwt7l1FZ_BC71tYqllqi0SNdczw&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQO3X6x7ykFTwkGCrjZun2dnUdlLrG4Tfn6nsgtTZpcVjg&oe=6AD5EEAB",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t39.30808-6/840206497_1568424655322240_757394542080824193_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=ryhF6HWtLN8Q7kNvwHLmPeK&_nc_oc=AdoPx_37t6Qehuz_DzKvUL9-BnW0c6fYnSG0caj6xFHeT05sbdL2Ja2alcv0tRXPgKk&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQPnf3HL0WoTs-H3LooZib5ghi3PBNOUs4m1Yr3ytNARGQ&oe=6AD65F2B",
       "permalink": "https://www.instagram.com/p/DeMHqd6jw53/"
     },
     {
@@ -327,11 +372,11 @@
       "timestamp": "2026-10-02T06:32:28+0000",
       "type": "IMAGE",
       "caption": "🍂 청년식탁 시즌2, 이번엔 어디에서 만날까요?\n청년농부의 정성과 셰프의 손길이 만나는 특별한 한 끼! 🍚\n\n청년식탁 시즌2가 찾아갈 장소를 맞혀주세요🔍\n\n📸 사진 속에 정답이 숨어 있어요!\n힌트 ① 충남 아산에 자리한 약 500년 전통의 마을\n힌트 ② 옛 정취를 간직한 돌담길이 이어지는 곳\n힌트 ③ 전통 먹거리부터 공예까지 다양한 체험이 가능한 곳\n\n어디인지 감이 오셨나요? 🤔\n\n📝 참여 방법\n① 정답을 댓글로 남겨주세요.\n② 프로필 링크에 접속해 이벤트 설문을 작성하고 제출해 주세요.\n※ 댓글 작성과 설문 제출을 모두 완료해야 참여가 완료됩니다.\n\n🎁 이벤트 경품\nTHE SCENT OF ASAN(더 센트 오브 아산 디퓨저) 50ml, 30명 \n\n📅 이벤트 기간\n2026. 10. 2.(금) ~ 10. 11.(일)\n\n📢 당첨자 발표\n2026. 10. 15.(목)\n\n가을의 정취와 맛있는 이야기가 가득한 청년식탁 시즌2,\n많은 관심과 참여 부탁드려요🧡\n\n#청년식탁시즌2 #청년농부 #이벤트",
-      "likes": 429,
+      "likes": 427,
       "comments": 368,
       "views": null,
       "view_delta": null,
-      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t39.30808-6/833852574_1563329012498471_4208833739121467072_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OCF3MKC5188Q7kNvwEHqFjb&_nc_oc=AdrNDEv6-OvRRKCX5Sk3kDg2Y2fCzE12PiqhLdw6A9EPgo7xXJOaGa7piZeCo3IoPuA&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=c-4fIXdbd1lsWNpcouDXdQ&oh=00_AQNpTRMjFBXR3J9BPwUYoLBtbT7Cxi_CVUKMupYbtFK0Tw&oe=6AD5F4AD",
+      "thumbnail": "https://scontent-sjc6-1.cdninstagram.com/v/t39.30808-6/833852574_1563329012498471_4208833739121467072_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=OCF3MKC5188Q7kNvwESp2B9&_nc_oc=AdpCHTtqx18-P8aIK2bq9B2PVIr9C3kHZvtfGyskG0UzssJyu2GZhSNHh3JOr6LeQ_g&_nc_zt=23&_nc_ht=scontent-sjc6-1.cdninstagram.com&edm=AL-3X8kEAAAA&_nc_gid=_hFS9kR9y5HfEgwikPO3uw&oh=00_AQNezpeTymuSWAeLiOrs90LV5uEop3ZAtZjPcR4kK4Te0A&oe=6AD6652D",
       "permalink": "https://www.instagram.com/p/Dd-2SuBj-lm/"
     },
     {

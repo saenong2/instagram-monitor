@@ -1,4 +1,4 @@
-"""Convert two-account API output into the existing public dashboard JSON.
+"""Convert collected API output into the existing public dashboard JSON.
 
 No credentials are read or written here. The collector handles Meta API access.
 """
@@ -9,7 +9,21 @@ from pathlib import Path
 SOURCE = Path('data/test_accounts.json')
 DESTINATION = Path('dashboard.json')
 KST = timezone(timedelta(hours=9))
-LEVELS = {'농림축산식품부': '장관급', '행정안전부': '장관급'}
+ROSTER = Path('agencies.json')
+# Historical names in previously published posts; keep them consistent after renames.
+RENAMES = {
+    '산업통상자원부': '산업통상부',
+    '기후부(환경부)': '기후에너지환경부',
+    '중소기업벤처부': '중소벤처기업부',
+}
+
+
+def roster_levels():
+    data = read_json(ROSTER)
+    if not isinstance(data.get('agencies'), list):
+        raise RuntimeError('agencies.json missing or invalid; refusing to publish')
+    return {a['name']: a['group'] for a in data['agencies'] if a.get('name') and a.get('group') in ('장관급','차관급','기타')}
+
 
 
 def read_json(path):
@@ -23,12 +37,16 @@ def main():
     accounts = source.get('accounts', [])
     if not accounts:
         raise RuntimeError('No collected accounts; refusing to overwrite the dashboard')
+    levels = roster_levels()
     collected = datetime.fromisoformat(source['collected_at'].replace('Z', '+00:00'))
     if collected.tzinfo is None:
         raise RuntimeError('Collection timestamp must include timezone')
 
     previous = read_json(DESTINATION)
     existing_posts = {str(p['id']): p for p in previous.get('posts', []) if p.get('id')}
+    for old in existing_posts.values():
+        old['agency'] = RENAMES.get(old.get('agency'), old.get('agency'))
+        old['level'] = levels.get(old.get('agency'), old.get('level', '기타'))
     previous_at = previous.get('collected_at')
     if previous_at:
         prev_time = datetime.fromisoformat(previous_at.replace('Z', '+00:00'))
@@ -41,7 +59,10 @@ def main():
     fresh_posts = {}
     for account in accounts:
         agency = account['agency']
-        level = LEVELS.get(agency, '기타')
+        agency = RENAMES.get(agency, agency)
+        if agency not in levels:
+            raise RuntimeError(f'Collected agency not in agencies.json: {agency}')
+        level = levels[agency]
         agencies.append({
             'name': agency,
             'username': account['username'],

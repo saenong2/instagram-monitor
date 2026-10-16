@@ -12,11 +12,11 @@ from pathlib import Path
 from collect_instagram import fetch_account
 
 TARGETS = [
-    ("방위사업청", "dapa_korea_official"),
-    ("식품의약품안전처", "mfdskorea"),
-    ("농촌진흥청", "rdakorea"),
-    ("기상청", "kma_skylove"),
-    ("국가유산청", "chlove_u"),
+    ("국민권익위원회", "acrc0229"),
+    ("금융위원회", "fsc.go.kr"),
+    ("공정거래위원회", "korea_fair_trade_commission"),
+    ("국가데이터처", "mods_korea"),
+    ("개인정보보호위원회", "pipc.go.kr"),
 ]
 
 

@@ -1,6 +1,6 @@
 """Collect verified Instagram accounts using Meta Business Discovery.
 
-Safety defaults: 35 accounts, at most 35 API requests, no pagination.
+Safety defaults: 51 accounts, at most 51 API requests, no pagination.
 Keeps the existing data/test_accounts.json schema for publish_dashboard.py.
 Secrets are read only from environment variables.
 """
@@ -17,8 +17,8 @@ from urllib.request import urlopen
 API_VERSION = "v26.0"
 ROSTER_PATH = Path("agencies.json")
 OUTPUT_PATH = Path("data/test_accounts.json")
-MAX_ACCOUNTS_PER_RUN = 35
-MAX_API_REQUESTS_PER_RUN = 35
+MAX_ACCOUNTS_PER_RUN = 51
+MAX_API_REQUESTS_PER_RUN = 51
 POSTS_PER_ACCOUNT = 10
 SECONDS_BETWEEN_REQUESTS = 2
 

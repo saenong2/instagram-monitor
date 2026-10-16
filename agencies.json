@@ -132,7 +132,7 @@
       "name": "국민권익위원회",
       "group": "차관급",
       "instagram_username": "acrc0229",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "식품의약품안전처",
@@ -240,19 +240,19 @@
       "name": "금융위원회",
       "group": "차관급",
       "instagram_username": "fsc.go.kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "공정거래위원회",
       "group": "차관급",
       "instagram_username": "korea_fair_trade_commission",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "국가데이터처",
       "group": "차관급",
       "instagram_username": "mods_korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "인사혁신처",
@@ -270,7 +270,7 @@
       "name": "개인정보보호위원회",
       "group": "차관급",
       "instagram_username": "pipc.go.kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "해양경찰청",

@@ -92,6 +92,7 @@ def main():
                 'views': current_views,
                 'view_delta': delta,
 'thumbnail': media.get('thumbnail_url') or media.get('media_url') or '',
+'video_url': (media.get('media_url') or '') if media.get('media_type') == 'VIDEO' else '',
 'images': [
     child.get('media_url') or child.get('thumbnail_url')
     for child in (media.get('children') or {}).get('data', [])

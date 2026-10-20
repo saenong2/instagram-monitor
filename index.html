@@ -109,7 +109,7 @@ function mediaItems(p){
  if(p.type==='CAROUSEL_ALBUM'&&children.length){
   return children.map(c=>typeof c==='string'?{url:c,type:'IMAGE'}:{url:c.media_url||c.url||c.thumbnail_url||'',type:c.media_type||c.type||'IMAGE',poster:c.thumbnail_url||''}).filter(x=>x.url);
  }
- const url=p.type==='VIDEO'?(p.video_url||p.media_url):p.media_url||p.thumbnail;
+ const url=p.type==='VIDEO'?(p.video_url||p.media_url||p.thumbnail):p.media_url||p.thumbnail;
  return url?[{url,type:p.type==='VIDEO'&&Boolean(p.video_url||p.media_url)?'VIDEO':'IMAGE',poster:p.thumbnail}]:[];
 }
 function mediaHtml(p){

@@ -70,7 +70,8 @@ def fetch_account(ig_user_id, token, agency, username):
         "{username,followers_count,media_count,"
         f"media.limit({POSTS_PER_ACCOUNT})"
         "{id,caption,media_type,media_url,thumbnail_url,"
-        "like_count,comments_count,view_count,permalink,timestamp}}"
+          "like_count,comments_count,view_count,permalink,timestamp,"
+          "children{id,media_type,media_url,thumbnail_url}}}"
     )
     url = (
         f"https://graph.facebook.com/{API_VERSION}/{ig_user_id}?"

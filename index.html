@@ -105,7 +105,7 @@ function renderTable(){const data=filtered();$('resultCount').textContent=`검�
 // 추가 미디어가 제공되는 게시물은 화면 안에서 바로 넘기거나 재생합니다.
 const mediaState={};
 function mediaItems(p){
- const children=Array.isArray(p.children)?p.children:[];
+ const children=Array.isArray(p.images)&&p.images.length?p.images:Array.isArray(p.children)?p.children:[];
  if(p.type==='CAROUSEL_ALBUM'&&children.length){
   return children.map(c=>typeof c==='string'?{url:c,type:'IMAGE'}:{url:c.media_url||c.url||c.thumbnail_url||'',type:c.media_type||c.type||'IMAGE',poster:c.thumbnail_url||''}).filter(x=>x.url);
  }

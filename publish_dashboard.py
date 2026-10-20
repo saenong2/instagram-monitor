@@ -91,8 +91,13 @@ def main():
                 'comments': media.get('comments_count', 0),
                 'views': current_views,
                 'view_delta': delta,
-                'thumbnail': media.get('thumbnail_url') or media.get('media_url') or '',
-                'permalink': media.get('permalink', ''),
+'thumbnail': media.get('thumbnail_url') or media.get('media_url') or '',
+'images': [
+    child.get('media_url') or child.get('thumbnail_url')
+    for child in (media.get('children') or {}).get('data', [])
+    if child.get('media_url') or child.get('thumbnail_url')
+] or old.get('images', []),
+'permalink': media.get('permalink', ''),
             }
 
     # Retain posts from earlier successful collections, without fabricating current KPIs.

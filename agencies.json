@@ -6,7 +6,7 @@
       "name": "이재명",
       "group": "기타",
       "instagram_username": "2_jaemyung",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "경찰청",
@@ -18,7 +18,7 @@
       "name": "대한민국정부",
       "group": "기타",
       "instagram_username": "gov_korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "농림축산식품부",
@@ -108,7 +108,7 @@
       "name": "공소청",
       "group": "기타",
       "instagram_username": "spo_gov",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "질병관리청",
@@ -186,7 +186,7 @@
       "name": "병무청",
       "group": "차관급",
       "instagram_username": "mma_go_kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "관세청",
@@ -204,13 +204,13 @@
       "name": "새만금개발청",
       "group": "차관급",
       "instagram_username": "smgcstory",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "산림청",
       "group": "차관급",
       "instagram_username": "forest_korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "성평등가족부",
@@ -222,19 +222,19 @@
       "name": "방송미디어통신위원회",
       "group": "장관급",
       "instagram_username": "with_kmcc",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "재외동포청",
       "group": "차관급",
       "instagram_username": "overseas_koreans_agency",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "지식재산처",
       "group": "차관급",
       "instagram_username": "moipkorea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "금융위원회",
@@ -258,13 +258,13 @@
       "name": "인사혁신처",
       "group": "차관급",
       "instagram_username": "mpm_kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "법제처",
       "group": "차관급",
       "instagram_username": "moleg.go.kr",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "개인정보보호위원회",
@@ -276,7 +276,7 @@
       "name": "해양경찰청",
       "group": "차관급",
       "instagram_username": "kcgnmpa",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "기획예산처",
@@ -288,25 +288,25 @@
       "name": "조달청",
       "group": "차관급",
       "instagram_username": "ppspr_korea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "행정중심복합도시건설청",
       "group": "차관급",
       "instagram_username": "happycitysejong_official",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "원자력안전위원회",
       "group": "차관급",
       "instagram_username": "nssckorea",
-      "instagram_verified": false
+      "instagram_verified": true
     },
     {
       "name": "우주항공청",
       "group": "차관급",
       "instagram_username": "kasa.go.kr",
-      "instagram_verified": false
+      "instagram_verified": true
     }
   ]
 }

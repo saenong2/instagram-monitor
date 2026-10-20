@@ -43,10 +43,11 @@ def main():
         raise RuntimeError('Collection timestamp must include timezone')
 
     previous = read_json(DESTINATION)
-existing_posts = {str(p['id']): p for p in previous.get('posts', []) if p.get('id')}
+    existing_posts = {str(p['id']): p for p in previous.get('posts', []) if p.get('id')}
 
-# 한국 날짜를 기준으로 조회수 기록을 관리합니다.
-collection_date = collected.astimezone(KST).strftime('%Y-%m-%d')
+    # 한국 날짜를 기준으로 조회수 기록을 관리합니다.
+    collection_date = collected.astimezone(KST).strftime('%Y-%m-%d')
+
     for old in existing_posts.values():
         old['agency'] = RENAMES.get(old.get('agency'), old.get('agency'))
         old['level'] = levels.get(old.get('agency'), old.get('level', '기타'))
@@ -84,30 +85,30 @@ collection_date = collected.astimezone(KST).strftime('%Y-%m-%d')
             timestamp = media.get('timestamp', '')
 
 # 같은 영상의 날짜별 조회수를 보관합니다.
-view_history = dict(old.get('view_history') or {})
+            view_history = dict(old.get('view_history') or {})
 
-# 매일 처음 수집한 조회수를 보관합니다.
-if media.get('media_type') == 'VIDEO' and current_views is not None:
-    view_history.setdefault(collection_date, int(current_views))
+            # 매일 처음 수집한 조회수를 보관합니다.
+            if media.get('media_type') == 'VIDEO' and current_views is not None:
+                view_history.setdefault(collection_date, int(current_views))
 
-    # 전날 기록과 비교해 조회수 증가량을 계산합니다.
-    yesterday = datetime.fromordinal(
-        collected.astimezone(KST).toordinal() - 1
-    ).strftime('%Y-%m-%d')
+                # 전날 기록과 비교해 조회수 증가량을 계산합니다.
+                yesterday = datetime.fromordinal(
+                    collected.astimezone(KST).toordinal() - 1
+                ).strftime('%Y-%m-%d')
 
-    yesterday_views = view_history.get(yesterday)
+                yesterday_views = view_history.get(yesterday)
 
-    if yesterday_views is not None:
-        delta = max(
-            0,
-            view_history[collection_date] - int(yesterday_views)
-        )
-    else:
-        delta = None
-else:
-    delta = None
+                if yesterday_views is not None:
+                    delta = max(
+                        0,
+                        view_history[collection_date] - int(yesterday_views)
+                    )
+                else:
+                    delta = None
+            else:
+                delta = None
 
-fresh_posts[media_id] = {
+            fresh_posts[media_id] = {
                 'id': media_id,
                 'agency': agency,
                 'level': level,
@@ -118,16 +119,16 @@ fresh_posts[media_id] = {
                 'likes': media.get('like_count', 0),
                 'comments': media.get('comments_count', 0),
                 'views': current_views,
-'view_delta': delta,
-'view_history': view_history,
-'thumbnail': media.get('thumbnail_url') or media.get('media_url') or '',
-'video_url': (media.get('media_url') or '') if media.get('media_type') == 'VIDEO' else '',
-'images': [
-    child.get('media_url') or child.get('thumbnail_url')
-    for child in (media.get('children') or {}).get('data', [])
-    if child.get('media_url') or child.get('thumbnail_url')
-] or old.get('images', []),
-'permalink': media.get('permalink', ''),
+                'view_delta': delta,
+                'view_history': view_history,
+                'thumbnail': media.get('thumbnail_url') or media.get('media_url') or '',
+                'video_url': (media.get('media_url') or '') if media.get('media_type') == 'VIDEO' else '',
+                'images': [
+                    child.get('media_url') or child.get('thumbnail_url')
+                    for child in (media.get('children') or {}).get('data', [])
+                    if child.get('media_url') or child.get('thumbnail_url')
+                ] or old.get('images', []),
+                'permalink': media.get('permalink', ''),
             }
 
     # Retain posts from earlier successful collections, without fabricating current KPIs.

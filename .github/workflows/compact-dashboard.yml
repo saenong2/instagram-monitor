@@ -1,0 +1,48 @@
+
+name: Compact Dashboard JSON
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Compact dashboard JSON
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('dashboard.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+
+          compact = json.dumps(
+              data,
+              ensure_ascii=False,
+              separators=(',', ':')
+          ) + '\n'
+
+          path.write_text(compact, encoding='utf-8')
+          print('Dashboard JSON compacted successfully')
+          PY
+
+      - name: Save compacted file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard.json
+          if git diff --cached --quiet; then
+            echo "No changes to save."
+          else
+            git commit -m "Compact dashboard JSON"
+            git push
+          fi

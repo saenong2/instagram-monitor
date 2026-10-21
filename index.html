@@ -61,7 +61,12 @@ body{font-size:16px;line-height:1.55}
   <input type="search" id="keyword" placeholder="예: AI, 행정수도, 탄소중립">
 </div><div class="field"><label for="agency">기관</label><select id="agency"><option value="">전체 기관</option></select></div><div class="field"><label for="level">기관 구분</label><select id="level"><option value="">전체</option><option value="장관급">장관급</option><option value="차관급">차관급</option><option value="기타">기타</option></select></div><div class="field"><label for="format">게시물 유형</label><select id="format"><option value="">전체</option><option value="VIDEO">릴스·동영상</option><option value="IMAGE">이미지</option><option value="CAROUSEL_ALBUM">카드뉴스·여러 장</option></select></div>
 <div class="field"><label for="eventFilter">이벤트 여부</label><select id="eventFilter"><option value="all">전체</option><option value="exclude">이벤트 제외</option><option value="only">이벤트만 보기</option></select></div>
-<div class="field"><label for="order">정렬</label><select id="order"><option value="recent">최신순</option><option value="likes">좋아요순</option><option value="views">조회수순</option><option value="comments">댓글순</option></select></div><div class="field"><label for="from">시작일</label><input type="date" id="from" value="2026-01-01"></div><div class="field"><label for="to">종료일</label><input type="date" id="to" value="2026-12-31"></div><div class="field"><label for="minLikes">최소 좋아요</label><input type="number" id="minLikes" min="0" placeholder="0"></div><div class="field"><label for="minViews">최소 조회수 (영상)</label><input type="number" id="minViews" min="0" placeholder="0"></div><div class="field"><label for="minComments">최소 댓글</label><input type="number" id="minComments" min="0" placeholder="0"></div></div><div class="filter-actions"><div class="count" id="resultCount">게시물 조회 중</div><div class="controls"><button class="btn" type="button" id="reset">초기화</button><button class="btn btn-primary" type="button" id="excel">엑셀 다운로드 ↓</button></div></div><div class="view-row"><span class="feed-meta">검색·정렬 조건은 두 보기에서 동일하게 적용됩니다.</span><div class="tab-switch" aria-label="게시물 보기 방식"><button id="tableView" type="button" class="active" aria-pressed="true">표 보기</button><button id="feedView" type="button" aria-pressed="false">피드 보기</button></div></div><div class="table-wrap" id="tableViewPanel"><table class="data-table"><thead><tr><th>기관</th><th>구분</th><th>게시일</th><th>썸네일</th><th>내용</th><th>조회수</th><th>좋아요</th><th>댓글</th><th>원문</th></tr></thead><tbody id="postRows"></tbody></table></div><div id="feedViewPanel" class="feed-grid" hidden></div><div class="table-footer"><button class="ghost" type="button" id="postMore">더보기 +5</button></div></div></section>
+<div class="field"><label for="order">정렬</label><select id="order"><option value="recent">최신순</option><option value="likes">좋아요순</option><option value="views">조회수순</option><option value="comments">댓글순</option></select></div><div class="field"><label for="from">시작일</label><input type="date" id="from" value="2026-01-01"></div><div class="field"><label for="to">종료일</label><input type="date" id="to" value="2026-12-31"></div><div class="field"><label for="minLikes">최소 좋아요</label><input type="number" id="minLikes" min="0" placeholder="0"></div><div class="field"><label for="minViews">최소 조회수 (영상)</label><input type="number" id="minViews" min="0" placeholder="0"></div><div class="field"><label for="minComments">최소 댓글</label><input type="number" id="minComments" min="0" placeholder="0"></div></div><div class="tab-switch" id="postPeriodButtons" style="margin-bottom:12px">
+  <button type="button" data-days="7">최근 7일</button>
+  <button type="button" data-days="30">최근 30일</button>
+  <button type="button" data-days="90">최근 90일</button>
+  <button type="button" data-days="all">2026년 전체</button>
+</div><div class="filter-actions"><div class="count" id="resultCount">게시물 조회 중</div><div class="controls"><button class="btn" type="button" id="reset">초기화</button><button class="btn btn-primary" type="button" id="excel">엑셀 다운로드 ↓</button></div></div><div class="view-row"><span class="feed-meta">검색·정렬 조건은 두 보기에서 동일하게 적용됩니다.</span><div class="tab-switch" aria-label="게시물 보기 방식"><button id="tableView" type="button" class="active" aria-pressed="true">표 보기</button><button id="feedView" type="button" aria-pressed="false">피드 보기</button></div></div><div class="table-wrap" id="tableViewPanel"><table class="data-table"><thead><tr><th>기관</th><th>구분</th><th>게시일</th><th>썸네일</th><th>내용</th><th>조회수</th><th>좋아요</th><th>댓글</th><th>원문</th></tr></thead><tbody id="postRows"></tbody></table></div><div id="feedViewPanel" class="feed-grid" hidden></div><div class="table-footer"><button class="ghost" type="button" id="postMore">더보기 +5</button></div></div></section>
 <section>
   <div class="section-top">
     <div>
@@ -370,6 +375,40 @@ document.querySelectorAll('.compare-sort').forEach(button => {
     renderAgencyComparison();
   });
 });
+document.querySelectorAll('#postPeriodButtons button').forEach(button => {
+  button.addEventListener('click', () => {
+    const days = button.dataset.days;
+
+document.querySelectorAll('#postPeriodButtons button').forEach(b => {
+  b.classList.toggle('active', b === button);
+});
+    
+    if (days === 'all') {
+      $('from').value = '2026-01-01';
+      $('to').value = '2026-12-31';
+    } else {
+      const today = new Date();
+      const start = new Date(today);
+      start.setDate(today.getDate() - Number(days) + 1);
+
+      const localDate = d =>
+        `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
+      $('from').value = localDate(start);
+      $('to').value = localDate(today);
+    }
+
+    shownPosts = 5;
+    renderTable();
+  });
+});
+['from', 'to'].forEach(id => {
+  $(id).addEventListener('change', () => {
+    document.querySelectorAll('#postPeriodButtons button').forEach(b => {
+      b.classList.remove('active');
+    });
+  });
+});
 function renderAll(){
   renderKpis();
   renderRank('minister','장관급','ministerRanks','ministerMore');
@@ -381,7 +420,10 @@ function renderAll(){
 }
 ['keyword','agency','level','format','eventFilter','order','from','to','minLikes','minViews','minComments'].forEach(id=>$(id).addEventListener(['minLikes','minViews','minComments'].includes(id)?'input':'change',()=>{shownPosts=5;renderTable()}));$('postMore').addEventListener('click',()=>{shownPosts+=5;renderTable()});$('reset').addEventListener('click',()=>{$('keyword').value='';
 $('agency').value='';$('level').value='';$('format').value='';
-$('eventFilter').value='all';$('order').value='recent';$('from').value='2026-01-01';$('to').value='2026-12-31';['minLikes','minViews','minComments'].forEach(id=>$(id).value='');shownPosts=5;renderTable()});$('excel').addEventListener('click',exportExcel);$('commentAll').addEventListener('click',()=>setCommentMode('all'));$('commentNoEvent').addEventListener('click',()=>setCommentMode('noevent'));$('tableView').addEventListener('click',()=>setPostView('table'));$('feedView').addEventListener('click',()=>setPostView('feed'));$('feedViewPanel').addEventListener('click',e=>{const b=e.target.closest('button[data-media-id]');if(!b)return;const post=posts.find(p=>String(p.id)===b.dataset.mediaId);if(!post)return;const n=mediaItems(post).length;if(!n)return;mediaState[post.id]=((mediaState[post.id]||0)+Number(b.dataset.dir)+n)%n;renderFeed(filtered())});load();
+$('eventFilter').value='all';$('order').value='recent';$('from').value='2026-01-01';$('to').value='2026-12-31';
+document.querySelectorAll('#postPeriodButtons button').forEach(b => {
+  b.classList.toggle('active', b.dataset.days === 'all');
+});['minLikes','minViews','minComments'].forEach(id=>$(id).value='');shownPosts=5;renderTable()});$('excel').addEventListener('click',exportExcel);$('commentAll').addEventListener('click',()=>setCommentMode('all'));$('commentNoEvent').addEventListener('click',()=>setCommentMode('noevent'));$('tableView').addEventListener('click',()=>setPostView('table'));$('feedView').addEventListener('click',()=>setPostView('feed'));$('feedViewPanel').addEventListener('click',e=>{const b=e.target.closest('button[data-media-id]');if(!b)return;const post=posts.find(p=>String(p.id)===b.dataset.mediaId);if(!post)return;const n=mediaItems(post).length;if(!n)return;mediaState[post.id]=((mediaState[post.id]||0)+Number(b.dataset.dir)+n)%n;renderFeed(filtered())});load();
 </script>
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" defer></script>
 </body>

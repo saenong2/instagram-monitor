@@ -145,7 +145,7 @@ def main():
         'agencies': agencies,
         'posts': posts,
     }
-    DESTINATION.write_text(json.dumps(output, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    DESTINATION.write_text(json.dumps(output, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     print(f'Published {len(agencies)} accounts and {len(posts)} posts to {DESTINATION}')
     print('Daily view comparison:', 'available' if comparable else 'waiting for next daily collection')
 

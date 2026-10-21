@@ -108,7 +108,12 @@ body{font-size:16px;line-height:1.55}
         <input type="date" id="compareTo" value="2026-12-31">
       </div>
     </div>
-
+<div style="text-align:right; margin-bottom:12px">
+  <button type="button" id="downloadAgencyComparison">
+    기관별 비교표 엑셀 다운로드
+  </button>
+</div>
+  
     <div class="tab-switch" id="comparePeriodButtons" style="margin-bottom:12px">
       <button type="button" data-days="7">최근 7일</button>
       <button type="button" data-days="30">최근 30일</button>
@@ -244,6 +249,62 @@ function renderFeed(data){
 function setPostView(view){postView=view;$('tableViewPanel').hidden=view!=='table';$('feedViewPanel').hidden=view!=='feed';['table','feed'].forEach(v=>{const active=v===view;$(v+'View').classList.toggle('active',active);$(v+'View').setAttribute('aria-pressed',String(active))});renderTable()}
 function setCommentMode(mode){commentMode=mode;['commentAll','commentNoEvent'].forEach((id,i)=>{const active=(i===0)===(mode==='all');$(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active))});renderPopular()}
 function exportExcel(){const data=filtered();if(!data.length){alert('다운로드할 게시물이 없습니다.');return}const header=['기관','구분','게시일','콘텐츠 유형','게시물 내용','조회수','좋아요','댓글','원문 링크'];const rows=data.map(p=>[p.agency,p.level,p.date,formatLabel(p.type),p.caption,p.type==='VIDEO'&&p.views!=null?p.views:'',p.likes,p.comments,p.permalink]);const filename=`instagram_monitor_${new Date().toISOString().slice(0,10)}${demo?'_DEMO':''}`;if(window.XLSX){const ws=XLSX.utils.aoa_to_sheet([header,...rows]);ws['!cols']=[{wch:24},{wch:10},{wch:13},{wch:15},{wch:75},{wch:13},{wch:13},{wch:13},{wch:52}];const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'게시물');XLSX.writeFile(wb,filename+'.xlsx');return}let csv='\ufeff'+[header,...rows].map(row=>row.map(cell=>'"'+String(cell??'').replace(/^[=+@\-\t\r]/,'\'$&').replace(/"/g,'""')+'"').join(',')).join('\r\n');const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));link.download=filename+'.csv';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);alert('엑셀 라이브러리를 불러오지 못해 엑셀에서 열 수 있는 CSV 파일로 저장했습니다.')}
+function exportAgencyComparison() {
+  const data = agencyComparisonExportRows;
+
+  if (!data.length) {
+    alert('다운로드할 기관별 비교 데이터가 없습니다.');
+    return;
+  }
+
+  const header = [
+    '기관', '게시물 수',
+    '좋아요 합계', '평균 좋아요', '최대 좋아요',
+    '댓글 합계', '평균 댓글', '최대 댓글',
+    '영상 조회수 합계', '영상 평균 조회수', '영상 최대 조회수'
+  ];
+
+  const rows = data.map(([name, g]) => [
+    name,
+    g.count,
+    g.likes,
+    Math.round(g.likes / g.count),
+    g.maxLikes,
+    g.comments,
+    Math.round(g.comments / g.count),
+    g.maxComments,
+    g.videoCount ? g.videoViews : '',
+    g.videoCount ? Math.round(g.videoViews / g.videoCount) : '',
+    g.videoCount ? g.maxVideoViews : ''
+  ]);
+
+  const filename = `instagram_agency_comparison_${new Date().toISOString().slice(0,10)}`;
+
+  if (window.XLSX) {
+    const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
+    ws['!cols'] = [{wch:25}, ...Array(10).fill({wch:18})];
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, '기관별 성과 비교');
+    XLSX.writeFile(wb, filename + '.xlsx');
+    return;
+  }
+
+  const csv = '\ufeff' + [header, ...rows]
+    .map(row => row.map(cell =>
+      '"' + String(cell ?? '')
+        .replace(/^[=+@\-\t\r]/, "'$&")
+        .replace(/"/g, '""') + '"'
+    ).join(',')).join('\r\n');
+
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(
+    new Blob([csv], {type:'text/csv;charset=utf-8;'})
+  );
+  link.download = filename + '.csv';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(link.href), 1000);
+}
 function setupCompareAgencies() {
   const select = $('compareAgency');
   const selected = select.value;
@@ -263,6 +324,7 @@ function setupCompareAgencies() {
 
   select.value = names.includes(selected) ? selected : '';
 }
+let agencyComparisonExportRows = [];
 let compareSortKey = 'count';
 let compareSortDirection = 'desc';
 document.querySelectorAll('#comparePeriodButtons button').forEach(button => {
@@ -371,7 +433,8 @@ const rows = Object.entries(groups).sort((a, b) => {
     ? -difference
     : difference;
 });
-
+  agencyComparisonExportRows = rows;
+  
   $('agencyComparisonRows').innerHTML = rows.length
     ? rows.map(([name, g]) => `
       <tr>
@@ -464,7 +527,7 @@ $('agency').value='';$('level').value='';$('format').value='';
 $('eventFilter').value='all';$('order').value='recent';$('from').value='2026-01-01';$('to').value='2026-12-31';
 document.querySelectorAll('#postPeriodButtons button').forEach(b => {
   b.classList.toggle('active', b.dataset.days === 'all');
-});['minLikes','minViews','minComments'].forEach(id=>$(id).value='');shownPosts=5;renderTable()});$('excel').addEventListener('click',exportExcel);$('commentAll').addEventListener('click',()=>setCommentMode('all'));$('commentNoEvent').addEventListener('click',()=>setCommentMode('noevent'));$('tableView').addEventListener('click',()=>setPostView('table'));$('feedView').addEventListener('click',()=>setPostView('feed'));$('feedViewPanel').addEventListener('click',e=>{const b=e.target.closest('button[data-media-id]');if(!b)return;const post=posts.find(p=>String(p.id)===b.dataset.mediaId);if(!post)return;const n=mediaItems(post).length;if(!n)return;mediaState[post.id]=((mediaState[post.id]||0)+Number(b.dataset.dir)+n)%n;renderFeed(filtered())});load();
+});['minLikes','minViews','minComments'].forEach(id=>$(id).value='');shownPosts=5;renderTable()});$('excel').addEventListener('click',exportExcel);$('downloadAgencyComparison').addEventListener('click', exportAgencyComparison);$('commentAll').addEventListener('click',()=>setCommentMode('all'));$('commentNoEvent').addEventListener('click',()=>setCommentMode('noevent'));$('tableView').addEventListener('click',()=>setPostView('table'));$('feedView').addEventListener('click',()=>setPostView('feed'));$('feedViewPanel').addEventListener('click',e=>{const b=e.target.closest('button[data-media-id]');if(!b)return;const post=posts.find(p=>String(p.id)===b.dataset.mediaId);if(!post)return;const n=mediaItems(post).length;if(!n)return;mediaState[post.id]=((mediaState[post.id]||0)+Number(b.dataset.dir)+n)%n;renderFeed(filtered())});load();
 </script>
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js" defer></script>
 </body>

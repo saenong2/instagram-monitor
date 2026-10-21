@@ -55,7 +55,10 @@ body{font-size:16px;line-height:1.55}
 <div class="notice" id="demoNotice"><strong>데모 데이터 안내</strong><span>현재 숫자와 게시물은 화면 기능을 시험하기 위한 가상 예시입니다. 실제 정부부처 성과가 아닙니다. 자동 수집 연결 전까지 실제 통계로 인용하지 마세요.</span></div>
 <section><div class="section-top"><div><h2>핵심 현황</h2><p id="updatedAt">연동 준비 중 · 데모 표시</p></div></div><div class="kpis" id="kpis"></div></section>
 <section><div class="section-top"><div><h2>기관별 팔로워 순위</h2><p>장관급·차관급 채널을 구분해 표시합니다.</p></div></div><div class="rank-grid"><div class="card rank"><div class="panel-head"><h3>장관급 채널 팔로워 순위</h3><span class="small-pill">장관급</span></div><div id="ministerRanks"></div><button id="ministerMore" class="ghost" type="button">더보기 +5</button></div><div class="card rank"><div class="panel-head"><h3>차관급 채널 팔로워 순위</h3><span class="small-pill">차관급</span></div><div id="viceRanks"></div><button id="viceMore" class="ghost" type="button">더보기 +5</button></div></div></section>
-<section><div class="section-top"><div><h2>최근 1주일 인기 게시물 TOP 10</h2><p>게시일 기준 최근 7일 · 현재 누적 수치로 순위 산정</p></div></div><div class="popular-grid"><div class="card popular-card"><div class="panel-head"><h3>♥ 좋아요 TOP 10</h3><span class="small-pill">좋아요</span></div><div id="likeTop"></div></div><div class="card popular-card"><div class="panel-head"><h3>▷ 영상 조회수 TOP 10</h3><span class="small-pill">영상만</span></div><div id="viewTop"></div></div><div class="card popular-card"><div class="panel-head"><h3>▤ 댓글 TOP 10</h3><span class="small-pill">댓글</span></div><div class="tab-switch" style="margin-bottom:10px" aria-label="댓글 순위 기준"><button type="button" id="commentAll" class="active" aria-pressed="true">전체</button><button type="button" id="commentNoEvent" aria-pressed="false">이벤트 제외</button></div><div id="commentTop"></div></div></div></section>
+<section><div class="section-top"><div><h2>최근 1주일 인기 게시물 TOP 10</h2><p>
+  <span id="popularPeriod">집계 기간 확인 중...</span>
+  <span> · 현재 누적 수치로 순위 산정</span>
+</p></div></div><div class="popular-grid"><div class="card popular-card"><div class="panel-head"><h3>♥ 좋아요 TOP 10</h3><span class="small-pill">좋아요</span></div><div id="likeTop"></div></div><div class="card popular-card"><div class="panel-head"><h3>▷ 영상 조회수 TOP 10</h3><span class="small-pill">영상만</span></div><div id="viewTop"></div></div><div class="card popular-card"><div class="panel-head"><h3>▤ 댓글 TOP 10</h3><span class="small-pill">댓글</span></div><div class="tab-switch" style="margin-bottom:10px" aria-label="댓글 순위 기준"><button type="button" id="commentAll" class="active" aria-pressed="true">전체</button><button type="button" id="commentNoEvent" aria-pressed="false">이벤트 제외</button></div><div id="commentTop"></div></div></div></section>
 <section><div class="section-top"><div><h2>2026년 게시 콘텐츠 모아보기</h2><p>기관, 콘텐츠 유형, 날짜, 성과 기준으로 게시물을 검색합니다.</p></div></div><div class="card table-card"><div class="filters"><div class="field">
   <label for="keyword">게시물 키워드 검색</label>
   <input type="search" id="keyword" placeholder="예: AI, 행정수도, 탄소중립">
@@ -215,7 +218,31 @@ function renderRank(key,level,container,btn){
   renderRank(key,level,container,btn);
  };
 }
-function renderPopular(){let ref=demo?new Date('2026-10-14T12:00:00+09:00'):new Date(),min=new Date(ref.getTime()-7*86400000),base=posts.filter(p=>{let d=new Date(p.date+'T12:00:00+09:00');let agency=agencies.find(a=>a.name===p.agency);return d>=min&&d<=ref&&(agency?.level==='장관급'||agency?.level==='차관급')});[['likeTop','likes'],['viewTop','views'],['commentTop','comments']].forEach(([id,metric])=>{let values=base.filter(p=>(metric!=='views'||p.type==='VIDEO')&&(metric!=='comments'||commentMode==='all'||!String(p.caption||'').includes('이벤트'))).sort((a,b)=>Number(b[metric]||0)-Number(a[metric]||0)).slice(0,10);$(id).innerHTML=values.length?values.map((p,i)=>`<div class="popular-row"><span style="color:#9aa4b7;font-size:11px;font-weight:800;width:13px">${i+1}</span><span class="thumb">${p.thumbnail?`<img src="${safe(p.thumbnail)}" alt="" loading="lazy" onerror="this.remove()">`:p.type==='VIDEO'?'▷':'▧'}</span><div class="popular-info"><div class="popular-agency">${safe(p.agency)}</div><div class="popular-caption">${p.permalink?`<a class="link" href="${safe(p.permalink)}" target="_blank" rel="noopener noreferrer">${safe(p.caption)}</a>`:safe(p.caption)}</div><div class="popular-metric">${fmt(p[metric])}${metric==='views'?'회':'개'}</div></div></div>`).join(''):'<div class="empty">해당 기간 게시물이 없습니다.</div>'})}
+function updatePopularPeriod() {
+  const ref = demo
+    ? new Date('2026-10-14T12:00:00+09:00')
+    : new Date();
+
+  const min = new Date(ref.getTime() - 7 * 86400000);
+
+  const formatDate = d => {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Seoul',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }).formatToParts(d);
+
+    const get = type => parts.find(p => p.type === type).value;
+    return `${get('year')}.${get('month')}.${get('day')}.`;
+  };
+
+  $('popularPeriod').textContent =
+    `집계 기간: ${formatDate(min)} ~ ${formatDate(ref)}`;
+}  
+function renderPopular(){
+  updatePopularPeriod();
+  let ref=demo?new Date('2026-10-14T12:00:00+09:00'):new Date(),min=new Date(ref.getTime()-7*86400000),base=posts.filter(p=>{let d=new Date(p.date+'T12:00:00+09:00');let agency=agencies.find(a=>a.name===p.agency);return d>=min&&d<=ref&&(agency?.level==='장관급'||agency?.level==='차관급')});[['likeTop','likes'],['viewTop','views'],['commentTop','comments']].forEach(([id,metric])=>{let values=base.filter(p=>(metric!=='views'||p.type==='VIDEO')&&(metric!=='comments'||commentMode==='all'||!String(p.caption||'').includes('이벤트'))).sort((a,b)=>Number(b[metric]||0)-Number(a[metric]||0)).slice(0,10);$(id).innerHTML=values.length?values.map((p,i)=>`<div class="popular-row"><span style="color:#9aa4b7;font-size:11px;font-weight:800;width:13px">${i+1}</span><span class="thumb">${p.thumbnail?`<img src="${safe(p.thumbnail)}" alt="" loading="lazy" onerror="this.remove()">`:p.type==='VIDEO'?'▷':'▧'}</span><div class="popular-info"><div class="popular-agency">${safe(p.agency)}</div><div class="popular-caption">${p.permalink?`<a class="link" href="${safe(p.permalink)}" target="_blank" rel="noopener noreferrer">${safe(p.caption)}</a>`:safe(p.caption)}</div><div class="popular-metric">${fmt(p[metric])}${metric==='views'?'회':'개'}</div></div></div>`).join(''):'<div class="empty">해당 기간 게시물이 없습니다.</div>'})}
 function setupAgencies(){let sel=$('agency'),prev=sel.value;sel.innerHTML='<option value="">전체 기관</option>'+agencies.slice().sort((a,b)=>a.name.localeCompare(b.name,'ko')).map(a=>`<option value="${safe(a.name)}">${safe(a.name)}</option>`).join('');sel.value=prev}
 function filtered(){let agency=$('agency').value,level=$('level').value,format=$('format').value,order=$('order').value,from=$('from').value,to=$('to').value,likes=$('minLikes').value,views=$('minViews').value,comments=$('minComments').value;return posts.filter(p=>
   (!$('keyword').value.trim() ||

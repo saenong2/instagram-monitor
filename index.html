@@ -69,18 +69,57 @@ body{font-size:16px;line-height:1.55}
       <p>게시물 검색 조건을 적용해 기관별 평균 성과를 비교합니다.</p>
     </div>
   </div>
-  <div class="card table-card">
+<div class="card table-card">
+    <div class="filters">
+      <div class="field">
+        <label for="compareLevel">기관 구분</label>
+        <select id="compareLevel">
+          <option value="">전체</option>
+          <option value="장관급">장관급</option>
+          <option value="차관급">차관급</option>
+          <option value="기타">기타</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="compareAgency">기관 선택</label>
+        <select id="compareAgency">
+          <option value="">전체 기관</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="compareEvent">이벤트 여부</label>
+        <select id="compareEvent">
+          <option value="all">전체</option>
+          <option value="exclude">이벤트 제외</option>
+          <option value="only">이벤트만 보기</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="compareFrom">시작일</label>
+        <input type="date" id="compareFrom" value="2026-01-01">
+      </div>
+      <div class="field">
+        <label for="compareTo">종료일</label>
+        <input type="date" id="compareTo" value="2026-12-31">
+      </div>
+    </div>
     <div class="table-wrap">
       <table class="data-table">
-        <thead>
-          <tr>
-            <th>기관</th>
-            <th>게시물 수</th>
-            <th>평균 좋아요</th>
-            <th>평균 댓글</th>
-            <th>영상 평균 조회수</th>
-          </tr>
-        </thead>
+<thead>
+  <tr>
+    <th>기관</th>
+    <th><button type="button" class="compare-sort" data-sort="count">게시물 수 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="likes">좋아요 합계 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="avgLikes">평균 좋아요 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="maxLikes">최대 좋아요 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="comments">댓글 합계 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="avgComments">평균 댓글 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="maxComments">최대 댓글 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="videoViews">영상 조회수 합계 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="avgVideoViews">영상 평균 조회수 ↕</button></th>
+    <th><button type="button" class="compare-sort" data-sort="maxVideoViews">영상 최대 조회수 ↕</button></th>
+  </tr>
+</thead>
         <tbody id="agencyComparisonRows"></tbody>
       </table>
     </div>
@@ -192,8 +231,47 @@ function renderFeed(data){
 function setPostView(view){postView=view;$('tableViewPanel').hidden=view!=='table';$('feedViewPanel').hidden=view!=='feed';['table','feed'].forEach(v=>{const active=v===view;$(v+'View').classList.toggle('active',active);$(v+'View').setAttribute('aria-pressed',String(active))});renderTable()}
 function setCommentMode(mode){commentMode=mode;['commentAll','commentNoEvent'].forEach((id,i)=>{const active=(i===0)===(mode==='all');$(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active))});renderPopular()}
 function exportExcel(){const data=filtered();if(!data.length){alert('다운로드할 게시물이 없습니다.');return}const header=['기관','구분','게시일','콘텐츠 유형','게시물 내용','조회수','좋아요','댓글','원문 링크'];const rows=data.map(p=>[p.agency,p.level,p.date,formatLabel(p.type),p.caption,p.type==='VIDEO'&&p.views!=null?p.views:'',p.likes,p.comments,p.permalink]);const filename=`instagram_monitor_${new Date().toISOString().slice(0,10)}${demo?'_DEMO':''}`;if(window.XLSX){const ws=XLSX.utils.aoa_to_sheet([header,...rows]);ws['!cols']=[{wch:24},{wch:10},{wch:13},{wch:15},{wch:75},{wch:13},{wch:13},{wch:13},{wch:52}];const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'게시물');XLSX.writeFile(wb,filename+'.xlsx');return}let csv='\ufeff'+[header,...rows].map(row=>row.map(cell=>'"'+String(cell??'').replace(/^[=+@\-\t\r]/,'\'$&').replace(/"/g,'""')+'"').join(',')).join('\r\n');const link=document.createElement('a');link.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));link.download=filename+'.csv';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);alert('엑셀 라이브러리를 불러오지 못해 엑셀에서 열 수 있는 CSV 파일로 저장했습니다.')}
+function setupCompareAgencies() {
+  const select = $('compareAgency');
+  const selected = select.value;
+
+  const level = $('compareLevel').value;
+
+  const names = agencies
+    .filter(a => !level || a.level === level)
+    .map(a => a.name)
+    .sort((a, b) => a.localeCompare(b, 'ko'));
+
+  select.innerHTML =
+    '<option value="">전체 기관</option>' +
+    names.map(name =>
+      `<option value="${safe(name)}">${safe(name)}</option>`
+    ).join('');
+
+  select.value = names.includes(selected) ? selected : '';
+}
+let compareSortKey = 'count';
+let compareSortDirection = 'desc';
 function renderAgencyComparison() {
-  const data = filtered();
+  const level = $('compareLevel').value;
+  const agency = $('compareAgency').value;
+  const eventMode = $('compareEvent').value;
+  const from = $('compareFrom').value;
+  const to = $('compareTo').value;
+
+  // 게시물 검색 필터와 독립적으로 비교합니다.
+  const data = posts.filter(p => {
+    const isEvent = String(p.caption || '').includes('이벤트');
+
+    return (!level || p.level === level)
+      && (!agency || p.agency === agency)
+      && (eventMode === 'all'
+        || (eventMode === 'exclude' && !isEvent)
+        || (eventMode === 'only' && isEvent))
+      && (!from || p.date >= from)
+      && (!to || p.date <= to);
+  });
+
   const groups = {};
 
   data.forEach(p => {
@@ -201,41 +279,106 @@ function renderAgencyComparison() {
       groups[p.agency] = {
         count: 0,
         likes: 0,
+        maxLikes: 0,
         comments: 0,
+        maxComments: 0,
         videoViews: 0,
+        maxVideoViews: 0,
         videoCount: 0
       };
     }
 
     const g = groups[p.agency];
+
     g.count++;
-    g.likes += p.likes;
-    g.comments += p.comments;
+    g.likes += Number(p.likes || 0);
+    g.maxLikes = Math.max(g.maxLikes, Number(p.likes || 0));
+
+    g.comments += Number(p.comments || 0);
+    g.maxComments = Math.max(g.maxComments, Number(p.comments || 0));
 
     if (p.type === 'VIDEO' && p.views != null) {
-      g.videoViews += Number(p.views);
+      const views = Number(p.views);
+      g.videoViews += views;
+      g.maxVideoViews = Math.max(g.maxVideoViews, views);
       g.videoCount++;
     }
   });
 
-  const rows = Object.entries(groups)
-    .sort((a, b) => b[1].count - a[1].count);
+const getSortValue = g => {
+  switch (compareSortKey) {
+    case 'avgLikes':
+      return g.likes / g.count;
+    case 'avgComments':
+      return g.comments / g.count;
+    case 'avgVideoViews':
+      return g.videoCount ? g.videoViews / g.videoCount : -1;
+    default:
+      return g[compareSortKey] ?? 0;
+  }
+};
+
+const rows = Object.entries(groups).sort((a, b) => {
+  const difference = getSortValue(a[1]) - getSortValue(b[1]);
+
+  return compareSortDirection === 'desc'
+    ? -difference
+    : difference;
+});
 
   $('agencyComparisonRows').innerHTML = rows.length
-    ? rows.map(([agency, g]) => `
+    ? rows.map(([name, g]) => `
       <tr>
-        <td><strong>${safe(agency)}</strong></td>
+        <td><strong>${safe(name)}</strong></td>
         <td>${num(g.count)}개</td>
+        <td>${num(g.likes)}개</td>
         <td>${num(Math.round(g.likes / g.count))}개</td>
+        <td>${num(g.maxLikes)}개</td>
+        <td>${num(g.comments)}개</td>
         <td>${num(Math.round(g.comments / g.count))}개</td>
+        <td>${num(g.maxComments)}개</td>
+        <td>${g.videoCount ? num(g.videoViews) + '회' : '—'}</td>
         <td>${g.videoCount
           ? num(Math.round(g.videoViews / g.videoCount)) + '회'
           : '—'}</td>
+        <td>${g.videoCount ? num(g.maxVideoViews) + '회' : '—'}</td>
       </tr>
     `).join('')
-    : '<tr><td colspan="5" class="empty">조건에 맞는 게시물이 없습니다.</td></tr>';
+    : '<tr><td colspan="11"><div class="empty">조건에 맞는 게시물이 없습니다.</div></td></tr>';
 }
-function renderAll(){renderKpis();renderRank('minister','장관급','ministerRanks','ministerMore');renderRank('vice','차관급','viceRanks','viceMore');renderPopular();setupAgencies();renderTable()}
+$('compareLevel').addEventListener('change', () => {
+  setupCompareAgencies();
+  renderAgencyComparison();
+});
+['compareAgency', 'compareEvent', 'compareFrom', 'compareTo'].forEach(id => {
+  $(id).addEventListener('change', () => {
+    renderAgencyComparison();
+  });
+});
+document.querySelectorAll('.compare-sort').forEach(button => {
+  button.addEventListener('click', () => {
+    const key = button.dataset.sort;
+
+    if (compareSortKey === key) {
+      compareSortDirection =
+        compareSortDirection === 'desc' ? 'asc' : 'desc';
+    } else {
+      compareSortKey = key;
+      compareSortDirection = 'desc';
+    }
+
+    renderAgencyComparison();
+  });
+});
+function renderAll(){
+  renderKpis();
+  renderRank('minister','장관급','ministerRanks','ministerMore');
+  renderRank('vice','차관급','viceRanks','viceMore');
+  renderPopular();
+  setupAgencies();
+  setupCompareAgencies();
+  renderTable();
+}
 ['keyword','agency','level','format','eventFilter','order','from','to','minLikes','minViews','minComments'].forEach(id=>$(id).addEventListener(['minLikes','minViews','minComments'].includes(id)?'input':'change',()=>{shownPosts=5;renderTable()}));$('postMore').addEventListener('click',()=>{shownPosts+=5;renderTable()});$('reset').addEventListener('click',()=>{$('keyword').value='';
 $('agency').value='';$('level').value='';$('format').value='';
 $('eventFilter').value='all';$('order').value='recent';$('from').value='2026-01-01';$('to').value='2026-12-31';['minLikes','minViews','minComments'].forEach(id=>$(id).value='');shownPosts=5;renderTable()});$('excel').addEventListener('click',exportExcel);$('commentAll').addEventListener('click',()=>setCommentMode('all'));$('commentNoEvent').addEventListener('click',()=>setCommentMode('noevent'));$('tableView').addEventListener('click',()=>setPostView('table'));$('feedView').addEventListener('click',()=>setPostView('feed'));$('feedViewPanel').addEventListener('click',e=>{const b=e.target.closest('button[data-media-id]');if(!b)return;const post=posts.find(p=>String(p.id)===b.dataset.mediaId);if(!post)return;const n=mediaItems(post).length;if(!n)return;mediaState[post.id]=((mediaState[post.id]||0)+Number(b.dataset.dir)+n)%n;renderFeed(filtered())});load();

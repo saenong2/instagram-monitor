@@ -1,0 +1,38 @@
+name: Check Dashboard Files
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'dashboard.json'
+      - 'data/posts-*.json'
+      - 'publish_dashboard.py'
+      - 'check_dashboard.py'
+      - '.github/workflows/check-dashboard.yml'
+      - '.github/workflows/update-instagram.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check JavaScript syntax
+        run: node --check app.js
+      - name: Check Python syntax and archive data
+        run: |
+          python -m py_compile collect_instagram.py publish_dashboard.py check_dashboard.py
+          python check_dashboard.py
+      - name: Check linked site assets
+        run: |
+          test -s index.html
+          test -s app.js
+          test -s styles.css

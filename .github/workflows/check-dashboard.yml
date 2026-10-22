@@ -11,6 +11,7 @@ on:
       - 'publish_dashboard.py'
       - 'check_dashboard.py'
       - '.github/workflows/check-dashboard.yml'
+      - '.github/workflows/update-instagram.yml'
   workflow_dispatch:
 
 permissions:

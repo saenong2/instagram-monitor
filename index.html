@@ -210,7 +210,22 @@ function updateCollectionStatus(data) {
 function normalize(data){const a=Array.isArray(data.agencies)?data.agencies:[];const p=Array.isArray(data.posts)?data.posts:[];if(!a.length)return false;agencies=a.map(x=>({...x,name:String(x.name||x.username||'알 수 없음'),level:x.level||'기타',followers:Number(x.followers??x.followers_count??0)}));posts=p.map((x,i)=>({...x,id:x.id||'row-'+i,agency:x.agency||x.agency_name||'알 수 없음',level:x.level||agencies.find(a=>a.name===(x.agency||x.agency_name))?.level||'기타',date:String(x.date||x.timestamp||'').slice(0,10),type:x.type||x.media_type||'IMAGE',caption:x.caption||'',likes:Number(x.likes??x.like_count??0),comments:Number(x.comments??x.comments_count??0),views:x.views??x.view_count??null,view_delta:x.view_delta??null,thumbnail:x.thumbnail||x.thumbnail_url||x.media_url||'',media_url:x.media_url||'',video_url:x.video_url||'',children:Array.isArray(x.children)?x.children:Array.isArray(x.media_children)?x.media_children:[],permalink:x.permalink||''}));demo=false;$('demoNotice').hidden=true;$('statusText').textContent='실제 API 수집 · '+agencies.length+'개 계정 · '+(data.updated_at||'업데이트 확인 필요');$('updatedAt').textContent='최근 데이터 수집: '+(data.updated_at||'정보 없음')+' · '+agencies.length+'개 계정';return true}
 async function load() {
   try {
-    const response = await fetch('dashboard.json?ts=' + Date.now
+    const response = await fetch('dashboard.json?ts=' + Date.now(), {
+      cache: 'no-store'
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+
+      normalize(data);
+      updateCollectionStatus(data);
+    }
+  } catch (e) {
+    console.error('대시보드 데이터 불러오기 오류:', e);
+  }
+
+  renderAll();
+}
 function kpi(label,val,note,ico){return `<div class="card kpi"><div class="kpi-top"><span>${label}</span><span class="kpi-icon">${ico}</span></div><div class="kpi-val">${safe(val)}</div><div class="kpi-note">${safe(note)}</div></div>`}
 function videoKpi(label, post, value, icon) {
   if (!post) return kpi(label, '—', '해당 영상 없음', icon);

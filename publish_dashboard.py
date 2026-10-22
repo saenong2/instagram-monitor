@@ -3,11 +3,14 @@
 No credentials are read or written here. The collector handles Meta API access.
 """
 import json
+import re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 SOURCE = Path('data/test_accounts.json')
 DESTINATION = Path('dashboard.json')
+POST_DIR = Path('data')
+MAX_POST_FILE_BYTES = 320_000
 KST = timezone(timedelta(hours=9))
 ROSTER = Path('agencies.json')
 # Historical names in previously published posts; keep them consistent after renames.
@@ -32,6 +35,55 @@ def read_json(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+
+def read_previous_posts(manifest):
+    """Read both the old single-file format and the new monthly archive format."""
+    if 'post_files' not in manifest:
+        return manifest.get('posts', [])
+    files = manifest['post_files']
+    if not isinstance(files, list):
+        raise RuntimeError('Invalid post_files manifest; refusing to publish')
+    posts = []
+    for filename in files:
+        if not isinstance(filename, str) or not re.fullmatch(r'data/posts-2026-\d{2}-\d{2}\.json', filename):
+            raise RuntimeError('Invalid archive filename; refusing to publish')
+        path = Path(filename)
+        if not path.is_file():
+            raise RuntimeError(f'Missing post archive: {path}; refusing to publish')
+        chunk = read_json(path)
+        if not isinstance(chunk, list):
+            raise RuntimeError(f'Invalid post archive: {path}; refusing to publish')
+        posts.extend(chunk)
+    return posts
+
+
+def write_post_archives(posts):
+    """Keep each GitHub-viewable post archive below 320 KB."""
+    by_month = {}
+    for post in posts:
+        month = str(post.get('date', ''))[:7]
+        if not re.fullmatch(r'2026-\d{2}', month):
+            raise RuntimeError(f'Invalid post date: {post.get("date")}')
+        by_month.setdefault(month, []).append(post)
+    POST_DIR.mkdir(parents=True, exist_ok=True)
+    filenames = []
+    for month, month_posts in sorted(by_month.items(), reverse=True):
+        parts, current, size = [], [], 2
+        for post in month_posts:
+            bytes_needed = len(json.dumps(post, ensure_ascii=False, separators=(',', ':')).encode('utf-8')) + 1
+            if current and size + bytes_needed > MAX_POST_FILE_BYTES:
+                parts.append(current)
+                current, size = [], 2
+            current.append(post)
+            size += bytes_needed
+        if current:
+            parts.append(current)
+        for index, batch in enumerate(parts, 1):
+            filename = f'data/posts-{month}-{index:02}.json'
+            Path(filename).write_text(json.dumps(batch, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
+            filenames.append(filename)
+    return filenames
+
 def main():
     source = read_json(SOURCE)
     accounts = source.get('accounts', [])
@@ -43,7 +95,7 @@ def main():
         raise RuntimeError('Collection timestamp must include timezone')
 
     previous = read_json(DESTINATION)
-    existing_posts = {str(p['id']): p for p in previous.get('posts', []) if p.get('id')}
+    existing_posts = {str(p['id']): p for p in read_previous_posts(previous) if p.get('id')}
 
     # 한국 날짜를 기준으로 조회수 기록을 관리합니다.
     collection_date = collected.astimezone(KST).strftime('%Y-%m-%d')
@@ -138,12 +190,14 @@ def main():
     posts = [p for p in posts if p.get('date', '') >= '2026-01-01']
 
     local_date = collected.astimezone(KST).strftime('%Y-%m-%d %H:%M KST')
+    post_files = write_post_archives(posts)
     output = {
         'collected_at': collected.isoformat(),
         'updated_at': local_date,
         'coverage_note': f'시험 운영: {len(agencies)}개 기관 수집. 하루 1회 갱신, 최근 게시물 중심으로 누적 저장합니다.',
         'agencies': agencies,
-        'posts': posts,
+        'post_files': post_files,
+        'post_count': len(posts),
     }
     DESTINATION.write_text(json.dumps(output, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     print(f'Published {len(agencies)} accounts and {len(posts)} posts to {DESTINATION}')

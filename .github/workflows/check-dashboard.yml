@@ -9,6 +9,8 @@ on:
       - 'dashboard.json'
       - 'data/posts-*.json'
       - 'publish_dashboard.py'
+      - 'backfill_2026.py'
+      - 'test_backfill_2026.py'      
       - 'check_dashboard.py'
       - '.github/workflows/check-dashboard.yml'
       - '.github/workflows/update-instagram.yml'
@@ -29,8 +31,9 @@ jobs:
         run: node --check app.js
       - name: Check Python syntax and archive data
         run: |
-          python -m py_compile collect_instagram.py publish_dashboard.py check_dashboard.py
+          python -m py_compile collect_instagram.py publish_dashboard.py check_dashboard.py backfill_2026.py test_backfill_2026.py
           python check_dashboard.py
+          python -m unittest -v test_backfill_2026
       - name: Check linked site assets
         run: |
           test -s index.html

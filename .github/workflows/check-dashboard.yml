@@ -30,7 +30,7 @@ jobs:
       - name: Check JavaScript syntax
         run: node --check app.js
       - name: Check Python syntax and archive data
-        run: 
+        run: |
           python -m py_compile collect_instagram.py publish_dashboard.py check_dashboard.py backfill_2026.py test_backfill_2026.py
           python check_dashboard.py
           python -m unittest -v test_backfill_2026

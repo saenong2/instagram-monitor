@@ -19,7 +19,7 @@ ROSTER_PATH = Path("agencies.json")
 OUTPUT_PATH = Path("data/test_accounts.json")
 MAX_ACCOUNTS_PER_RUN = 51
 MAX_API_REQUESTS_PER_RUN = 51
-POSTS_PER_ACCOUNT = 10
+POSTS_PER_ACCOUNT = 30
 SECONDS_BETWEEN_REQUESTS = 2
 
 
@@ -71,7 +71,7 @@ def fetch_account(ig_user_id, token, agency, username):
         f"media.limit({POSTS_PER_ACCOUNT})"
         "{id,caption,media_type,media_url,thumbnail_url,"
           "like_count,comments_count,view_count,permalink,timestamp,"
-         "children.limit(10){id,media_type,media_url,thumbnail_url}}}"
+         "children.limit(20){id,media_type,media_url,thumbnail_url}}}"
     )
     url = (
         f"https://graph.facebook.com/{API_VERSION}/{ig_user_id}?"

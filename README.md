@@ -24,3 +24,13 @@ GitHub Pages에서 동작하는 대시보드입니다. Meta 토큰을 브라우�
 ## 중요: 첫 배포
 
 이 ZIP은 기존 데이터와 코드를 모두 담고 있습니다. ZIP 내부 파일 **전체**를 동일한 저장소에 한 번에 반영하세요. `dashboard.json`만 먼저 교체하거나 게시물 분할 파일을 빠뜨리면 홈페이지가 데이터를 표시하지 못합니다. 변경 전 기존 저장소 ZIP을 보관하세요. Meta API를 새로 호출할 필요는 없습니다.
+
+## 2026 historical post backfill (new, limited rollout)
+
+- `backfill_2026.py` crawls 2026 posts using nested Business Discovery `media.after(cursor)` pagination, preserving all current daily post fields, video history, ranking deltas, profile metrics and current dashboard collection time. It **does not** perform the monthly recheck; that is a separate future task.
+- `.github/workflows/backfill-instagram-2026.yml` is scheduled once per day at **20:40 KST**, on the **default branch only** after this update is merged. **Maximum eight Meta API requests per run**, no automatic retries, two-second pause between requests. The ordinary 07:00 KST daily job remains independent (51 requests as previously configured) and uses the same concurrency group to avoid simultaneous writes.
+- `data/backfill_2026_state.json` stores `account_index`, `after` and `complete`. This is created by the first successful backfill run; after completion future scheduled runs do not call the API. If an API error or expired cursor occurs, the job stops, rather than issuing extra requests or silently skipping content. Check GitHub Actions if backfill stalls.
+- **After each run** both the state file and monthly post archives must be committed. The original daily dashboard `collected_at`, per-day `view_delta`, and records for already known IDs are not changed by historical collection. Newly backfilled video views are a one-time collection-date baseline, not reconstructed historic daily values.
+- Offline validation without credentials/network: `python -m unittest -v test_backfill_offline.py && python check_dashboard.py && node --check app.js`.
+- **Important**: Native API may not expose every old post, may reject cursors, and may not return view counts for all third-party videos. 2026 completeness is only established after all accounts have successfully paginated to pre-2026 posts. Do not assume a complete archive from `complete: true` if an account API truncates pagination.
+- Never commit Meta tokens; repository is publicly accessible.
